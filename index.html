@@ -98,13 +98,13 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Algorithmic Justice" startnode="1" creator="Twine" creator-version="2.3.9" ifid="01110FDD-C10E-456D-A4DE-91B7111D9FF5" zoom="1" format="SugarCube 2 (local/offline)" format-version="2.33.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&display=swap');
+	<tw-storydata name="Algorithmic Justice" startnode="1" creator="Twine" creator-version="2.3.9" ifid="01110FDD-C10E-456D-A4DE-91B7111D9FF5" zoom="1" format="SugarCube 2 (local/offline)" format-version="2.33.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"> @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 body, tw-story
 {
   background-color: #191919; 
-  font-family: 'Inconsolata', monospace;
-  font-size: 20px;
+  font-family: 'Ubuntu Mono', monospace;  
+  font-size: 18px;
   /*background-color: white; 
   color: black;*/
   max-width: 55em;
@@ -131,17 +131,19 @@ button {
   background-color: #4cf886;
   color: black;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro Screen and Story Init" tags="" position="39,26" size="200,200">&lt;&lt;cacheaudio &quot;atmosphere&quot; &quot;music/atmosphere.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;tension&quot; &quot;music/tension_piano.wav&quot;&gt;&gt;
 
-&quot;Algorithmic Justice&quot; is an interactive fiction game. That means that the story unfolds based on decisions you make throughout the game. 
+&quot;Algorithmic Justice&quot; (working title) is an interactive fiction game. That means that the story unfolds based on decisions you make throughout the game. 
 
-For the best experience, play this in fullscreen.
+For the best experience, play this in fullscreen with headphones.
+
+Thanks for playing!
 
 [[Begin]]
 
 ----
 [[Credits]]
 
-----
 
 Ignore the links below; used for debugging during drafting.
 [[Draft Begin]]
@@ -151,19 +153,23 @@ Ignore the links below; used for debugging during drafting.
 &lt;&lt;set $algoname to &quot;Cx86&quot;&gt;&gt;
 &lt;&lt;set $songuilt to random(0,1)&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="2" name="Begin" tags="" position="30,262" size="100,100">Your name is &#39;&#39;Connor&#39;&#39;, a retired computer scientist.
-&lt;&lt;audio atmosphere volume 0 fadeto 0.5&gt;&gt;
+&lt;&lt;silently&gt;&gt;
+initialize variables:
+&lt;&lt;set $calledJeremy to false&gt;&gt;
+&lt;&lt;set $calledJoanna to false&gt;&gt;
+&lt;&lt;set $calledMarcus to false&gt;&gt;
+&lt;&lt;set $unlockedMysteryPhoneNum to false&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Begin" tags="" position="29,262" size="100,100">&lt;&lt;timed 0.5s t8n&gt;&gt; Your name is &#39;&#39;Connor&#39;&#39;, a retired computer scientist. &lt;&lt;/timed&gt;&gt;
+&lt;&lt;audio atmosphere loop volume 0 fadeto 0.5&gt;&gt; &lt;&lt;timed 3s t8n&gt;&gt;
 Ten years ago, in the year 2100, you were recruited by the government as part of a secret project in response to civil unrest. The mass incarceration of the 21st century resulted in millions being unfairly jailed and punished at the mercy of a prejudiced judicial system, sparking protests across the nation. 
 
 In the modern cities of America, the government&#39;s top priority is to scrap this primitive way of serving justice and aspire to a higher moral and technological standard.
 
 You worked as part of a team of programmers, lawyers, and philosophers to develop an Artificial Intelligence called $algoname that can be used in place of human judges in a court of law to hand down sentences. 
 
-Since its first implementation, $algoname has become so skilled that it has a less than 0.005% error rate according to experts. Because  computers are less biased than humans.
+Since its first implementation, $algoname has become so skilled that it has a less than 0.005% error rate according to experts. Because  computers are less biased than humans.&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 5s t8n&gt;&gt;
 ...or are they?
-
-
 [[Next]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Next" tags="" position="31,411" size="100,100">$algoname will look at multiple factors of the defendant&#39;s life and behavior to determine whether they are guilty or innocent, and how serious a sentence they deserve. You&#39;ve been instructed to create an algorithm so flawless that it will display none of the biases that humans so often succumb to when handing out justice.
 
@@ -172,7 +178,7 @@ However, to minimize computational complexity, the AI can prioritize only one ke
 Which variable should it use?
 
 &lt;&lt;nobr&gt;&gt;
-&lt;&lt;button &quot;Past Criminal History&quot; &quot;Past Criminal History&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; 
+&lt;&lt;button &quot;Criminal History&quot; &quot;Criminal History&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; 
 &lt;&lt;button &quot;Demographic&quot; &quot;Demographic&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; 
 &lt;&lt;button &quot;Place of Birth&quot; &quot;Place of Birth&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; 
 &lt;&lt;button &quot;Income Level&quot; &quot;Income Level&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; 
@@ -182,9 +188,9 @@ Which variable should it use?
 Idea: have another button that says &quot;none of the above&quot; but then lead it to another page where it randomly selects a terrible variable
 like &quot;presence of a father figure&quot;
 or &quot;facial expression&quot;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Past Criminal History" tags="" position="246,292" size="100,100">&lt;&lt;set $algovar to 1&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Criminal History" tags="" position="246,292" size="100,100">&lt;&lt;set $algovar to 1&gt;&gt;
 
-You&#39;ve selected __past criminal history__ as the variable your algorithm will use to determine a defendant&#39;s innocence. 
+You&#39;ve selected __criminal history__ as the variable your algorithm will use to determine a defendant&#39;s innocence. 
 
 [[Continue-&gt;Draft Begin]] </tw-passagedata><tw-passagedata pid="5" name="Demographic" tags="" position="244,411" size="100,100">&lt;&lt;set $algovar to 2&gt;&gt;
 
@@ -198,19 +204,14 @@ You&#39;ve selected __place of birth__ as the variable your algorithm will use t
 
 You&#39;ve selected __income level__ as the variable your algorithm will use to determine a defendant&#39;s innocence. 
 
-[[Continue-&gt;Draft Begin]] </tw-passagedata><tw-passagedata pid="8" name="Draft Begin" tags="" position="432,299" size="100,100">&lt;&lt;type 40ms start 1s&gt;&gt;
+[[Continue-&gt;Draft Begin]] </tw-passagedata><tw-passagedata pid="8" name="Draft Begin" tags="" position="432,300" size="100,100">&lt;&lt;type 40ms start 1s&gt;&gt;
 	3 Days Before the Execution
 &lt;&lt;/type&gt;&gt;
 &lt;&lt;timed 3s t8n&gt;&gt;
 	[[Next-&gt;Son]]
 &lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;silently&gt;&gt;
-initialize variables:
-&lt;&lt;set $calledJoanna to false&gt;&gt;
-&lt;&lt;set $calledMarcus to false&gt;&gt;
-&lt;&lt;set $unlockedMysteryPhoneNum to false&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Son" tags="" position="431,425" size="100,100">&quot;Dad?&quot;
+</tw-passagedata><tw-passagedata pid="9" name="Son" tags="" position="431,425" size="100,100">&quot;Dad?&quot;
 
 The voice sends an arrow hurtling through the dark into your chest. Your heart twists, but with guilt just as much as with love. Even though you can barely see past the tip of your nose in the gloom, you know exactly what expression your kid is wearing in that moment.
 
@@ -249,7 +250,7 @@ I&#39;m broke as hell, and that&#39;s a motive for everything these days.
 You of all people know that to a computer, all that little stuff makes a big difference.&quot;
 &#96;&lt;&lt;/nobr&gt;&gt;&#96;
 
-You do know. The initial list of bugs for $algoname had been 167 lines long. But that was another detail absolutely no one was supposed to know. Including your very own child.
+You do know. The initial list of bugs for $algoname had been 167 lines long. But that was another detail absolutely no one was supposed to know. You had already seen what the government did to people who knew too much. The terror runs full-force through your veins at the thought of questioning them.
 
 [ @NOTE: Add more buildup/exposition here ]
 &lt;&lt;silently&gt;&gt;
@@ -259,25 +260,31 @@ Random idea: have the son quiz him on silly-seeming things like &quot;whats his 
 &quot;Something&#39;s wrong. You know it. Why would I kill someone? That&#39;s not who I am.&quot;
 
 [[&quot;...&quot;-&gt;Son Part 2]]
-[[&quot;I know&quot;-&gt;Son Part 2]]</tw-passagedata><tw-passagedata pid="10" name="Phone List" tags="" position="758,318" size="200,200">
-&#39;&#39;Who do you visit?&#39;&#39;
-
-&#39;&#39;[[Jeremy]]&#39;&#39;
+[[&quot;I know&quot;-&gt;Son Part 2]]</tw-passagedata><tw-passagedata pid="10" name="Phone List" tags="" position="759,318" size="200,200">
+!&#39;&#39;Who will you visit?&#39;&#39;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;audio atmosphere stop&gt;&gt;
+&lt;&lt;audio tension loop volume 0 fadeto 0.25&gt;&gt; &lt;&lt;/nobr&gt;&gt;
+&lt;&lt;if $calledJeremy is false&gt;&gt;&#39;&#39;[[Jeremy]]&#39;&#39;&lt;&lt;elseif $calledJeremy is true&gt;&gt;&#39;&#39;Jeremy&#39;&#39;&lt;&lt;/if&gt;&gt;
 Your 20 year old son. You&#39;ve grown distant ever since your partner passed away long ago. He&#39;s a good kid, but you don&#39;t know him the way you used to.
 
-&#39;&#39;[[Joanna]]&#39;&#39;
+&lt;&lt;if $calledJoanna is false&gt;&gt;&#39;&#39;[[Joanna]]&#39;&#39; &lt;&lt;elseif $calledJoanna is true&gt;&gt;&#39;&#39;Joanna&#39;&#39;&lt;&lt;/if&gt;&gt;
 Your old colleague. She worked with you on Project $algoname 20 years ago. After the team disbanded, she found work as an assistant AI researcher at a local university.
 
-&#39;&#39;[[Marcus]]&#39;&#39;
-A guy you know who works in the upper ranks in D.C. He&#39;s been known to be willing to pull some strings when asked.
+&lt;&lt;if $calledMarcus is false&gt;&gt;&#39;&#39;[[Marcus]]&#39;&#39; &lt;&lt;elseif $calledMarcus is true&gt;&gt;&#39;&#39;Marcus&#39;&#39;&lt;&lt;/if&gt;&gt;
+A guy you know who works in the upper ranks in D.C. One of the few people who knows about your involvement with the development of $algoname. He&#39;s been known to be willing to pull some strings when asked.
 
 Potential route not written yet:
 &#39;&#39;Detective Friend&#39;&#39;
 
-
 &#39;&#39;[[???]]&#39;&#39;
 You haven&#39;t called this number in a long time. 
 </tw-passagedata><tw-passagedata pid="11" name="&quot;Why?&quot;" tags="" position="430,677" size="100,100">&quot;Because you&#39;re my son,&quot; you say in a heartbeat. 
+
+&quot;Then help me prove that this was a mistake. I can&#39;t die for something I didn&#39;t do.&quot;
+
+You ball your fist against your knee beneath the table.
+
+&quot;Jeremy I wish I could but it&#39;s not that simple. I&#39;m as scared as you are right now, but the law--&quot;
 
 &quot;Dads don&#39;t believe computers over their sons. I know you won&#39;t stand up for me. You&#39;ve been doing nothing for half my life.&quot; 
 
@@ -295,11 +302,11 @@ You sense, rather than see, Jeremy tense up.
 
 His response is not what you expect.
 
-[[&quot;Why?&quot; he asks.-&gt;&quot;Why?&quot;]]</tw-passagedata><tw-passagedata pid="13" name="Joanna" tags="" position="644,636" size="200,100">&lt;&lt;set $calledJoanna to true&gt;&gt;
+[[&quot;Why?&quot; he asks.-&gt;&quot;Why?&quot;]]</tw-passagedata><tw-passagedata pid="13" name="Joanna" tags="" position="644,635" size="200,100">&lt;&lt;set $calledJoanna to true&gt;&gt;
 
 You knock on the door, and a voice rings out: &quot;Come in!&quot;
 
-Jo has somehow mastered the art of eating without her hands and has half a burger in her mouth while furiously typing away at her keyboard. 
+Jo has somehow mastered the art of eating without her hands. You turn the knob to see her somehow eating a burger without the use either of her hands as she furiously types away at her keyboard. 
 
 &quot;Office hours don&#39;t start for another 30 minutes, but if it&#39;s an urgent question —&quot;
 
@@ -307,60 +314,101 @@ She turns in her swivel chair to face you and the sandwich falls to the floor. H
 
 &quot;Hello Professor,&quot; you joke, but it&#39;s halfhearted. &quot;Any major bugs in the program recently?&quot; 
 
-&quot;The Algorithm doesn&#39;t make mistakes, Connor,&quot; She responds immediately, almost mechanically. It takes you aback. &quot;I can&#39;t help you.&quot;
+&quot;The Algorithm doesn&#39;t make mistakes, Connor,&quot; She responds immediately, in a mechanical tone. You nod. After doing a quick sweep to make sure the corridor outside is empty, you lock the office door and activate the radio frequency jammer in your pocket. 
+
+&quot;I&#39;m of the same opinion, Connor,&quot; she says in the same monotone. She surreptiously jerks her thumb toward the underside of the whiteboard. You feel under the metal pane until you find the bug, and deactivate it instantly.
+
+You both let out a collective sigh even though you know it&#39;s likely a false sense of security.
+
+&quot;Is the jammer enough?&quot; she asks worriedly.
+
+&quot;They haven&#39;t been able to override this model yet. It should buy us at least 5 minutes,&quot; you reply.
+
+&quot;Well, we won&#39;t need the whole 5. I already have an answer: I can&#39;t help you.&quot;
 
 &quot;So you know why I&#39;m here then. Why were you so surprised to see me?&quot;
 
-&quot;Well, you don&#39;t exactly swing by for lunch every week. It&#39;s been 10 years. And I didn&#39;t expect you to come to me out in the open. This is risky as hell.&quot;
+&quot;Well, you don&#39;t exactly swing by for lunch every week. It&#39;s been years of radio silence. And I didn&#39;t expect you to come to me in person. This is risky.&quot;
 
-←add more buildup here—&gt;
+&lt;&lt;nobr&gt;&gt;
+&quot;Who worked on 
+&lt;&lt;if $algovar is 1&gt;&gt;
+past criminal history data analysis? 
+&lt;&lt;elseif $algovar is 2&gt;&gt;
+demographic data analysis?
+&lt;&lt;elseif $algovar is 3&gt;&gt;
+birthplace and location data analysis?
+&lt;&lt;elseif $algovar is 4&gt;&gt;
+income level data analysis? 
+&lt;&lt;/if&gt;&gt; We were under a tight deadline, we didn&#39;t train the algorithmic model enough. That must be why this happened. We&#39;ve got to-&quot;
+&lt;&lt;/nobr&gt;&gt;
 
-Something catches your eye by the doorway. It&#39;s a photograph of Jo, you, and the other members of the research team grinning and holding an award. It&#39;s too blurry to read the engraving from the photo, but you still remember what the plaque says: for &quot;Most Socially Impactful Use of Artificial Intelligence&quot;. Your ears grow hot looking at the award, willing it to crumble to pieces in the photograph. The shame has been slowly eating you alive for 20 years. 
+&quot;First off,&quot; Joanna cuts you off. &quot;I know what it&#39;s like. I would go to the ends of the Earth for my kids. Any parent would. But why are you really doing this? Are you seriously thinking of going against the Algorithm? Do you truly understand what happens to people who do that?&quot;
 
-It was socially impactful, all right. Just not in the way he had intended. 
+Frustrated, you furrow your eyebrows. &quot;I know it&#39;s risky. But this isn&#39;t right. I can&#39;t let my son die right before my eyes. At the hands of a...machine.&quot; 
 
-A shadow passes over Jo&#39;s face as she comes to stand beside you, but she says nothing. Then she asks a question that he doesn&#39;t know the answer to.
+Joanna tenses. &quot;I don&#39;t mean to overstep here, but...I know you and Jeremy aren&#39;t the closest.&quot; She fumbles over her next words. &quot;I mean...what I&#39;m getting at is...are you absolutely sure--&quot;
 
-&quot;Are you doing alright?&quot; 
+&quot;Are you insinuating that my son is //guilty//?&quot; you shout, forgetting where you are for a minute in your rage. &quot;How could you? $algoname is not some higher being! It isn&#39;t the hand of God!&quot;
 
-You don&#39;t know how to answer, so you panic.
+They&#39;re nearly the same words that Jeremy said to you back at the prison. Somehow it&#39;s easier to agree with him when he&#39;s not there.
 
-The hopelessness of the situation hits you like a moving truck in your chest.
+&quot;The Algorithm is better than us, Connor. Its judgement is more unclouded than ours could ever be in a million years. Maybe people, as flawed and imperfect as we are, just can&#39;t comprehend what pure ethics look like.&quot;
+
+&quot;They can&#39;t hear us Jo, you&#39;re safe for a bit.&quot;
+
+&quot;I know you feel it too. That nagging doubt that it&#39;s actually right.&quot;
+
+Even as she speaks, you can see that she hates every word. When you&#39;ve been fed the same ideas over and over for so long, no matter how unsupported or irrational they are, it seems safer to just agree.
+
+It&#39;s the safe ideas that are the most dangerous. It would be safe to sit back, to say that this is just the system, and the systems. But how could you stand by systems that didn&#39;t protect the ones you loved?
+
+[ @TODO: have to add something here that convinces Jo to the other POV, that the alg is not perfect and above human bias ]
+
+Something catches your eye by the doorway. It&#39;s a photograph of Jo, you, and the other members of the research team grinning and holding an award. It&#39;s too blurry to read the engraving from the photo, but you still remember what the plaque says: for &quot;Most Socially Impactful Use of Artificial Intelligence&quot;. 
+
+Your ears grow hot looking at the award, willing it to crumble to pieces in the photograph. You think back to the newspaper headlines. 
+
+It was socially impactful, all right. Just not in the way they all had intended. 
+
+A shadow passes over Jo&#39;s face as she comes to stand beside you, but she says nothing. Then she asks a question that you don&#39;t know the answer to.
+
+&quot;What are you going to do?&quot; 
+
+The hopelessness of the situation finally hits you like a moving truck.
 
 &quot;How did this happen, Jo?&quot;
 
-[[ TODO 
+She glances at the clock, then bends to retrieve the fallen hamburger by her and inspects it. 
 
-Jo stands with her arms folded, a question in her eyes. For once, this was a question you knew the answer to.
+&quot;You know,&quot; she begins hesitantly. &quot;If you think...we could make $algoname //better//...more //just//...I don&#39;t think the Administration would be opposed.&quot;
 
-Your eyes drift back to the framed photograph.
+She sees the confusion on your face and sighs, like she can&#39;t believe she&#39;s actually suggesting this.
 
-The ease and delight on the face of your 30-year-old self seems foreign to you now. The days are long gone when you were just a young AI researcher, so excited to be working on a secret government project, head still full of fantasies from mystery novels and spy movies. 
+&quot;I still have access to the $algoname source code. I just do routine software updates from time to time. Maybe this is a...security bug that could need to be patched...immediately.&quot;
 
-&quot;What if there are others out there victimized by the Algorithm in the same way, do we leave them to rot? This is our creation! This is our doing!&quot;
+Something like hope blooms in your chest, but it&#39;s quickly tampered when you remember that the odds against you are still staggering. &quot;I only have 2 more days. He&#39;ll die by lethal injection in 2 days. Messing with $algoname&#39;s source code is something no one has done before.&quot;
 
-&quot;Connor. This is our chance to do what we should&#39;ve done a decade ago. We need to come clean.&quot;
+&quot;What other options do you have?&quot; Dusting off her hands, Joanna stands with her arms folded. &quot;You can&#39;t program anything to make this decision for you. You just have to ask yourself: how much damage can you undo? Who can you save?&quot;
 
-[[&quot;Let&#39;s come clean.&quot;-&gt;Go public]]
-[[&quot;No.&quot;-&gt;Say No to Joanna]] 
-</tw-passagedata><tw-passagedata pid="14" name="Hand the file back" tags="" position="1524,233" size="100,100">Without a word you hand the purple folder back to him.
+Your gaze drifts back to the framed photograph.
 
-&quot;That&#39;s not what I want,&quot; you say. &quot;I don&#39;t want your shady government backdoors. I&#39;m not switching places with him, but I&#39;m not leaving him to rot in jail.&quot;
+The ease and delight on the face of your young self seem foreign to you now. The days are long gone when you were just a new graduate, so excited to be working on a secret project. The shame has been slowly eating you alive. 
 
-Marcus looks exasperated. &quot;How do you still have an ounce of idealism in you? You need to start stooping a little lower! The execution is in 3 days. Some situations are too desperate to wait for a better answer.&quot;
+&quot;Connor. This is our chance to do what we should&#39;ve done a decade ago.&quot;
+
+[[&quot;Let&#39;s do it.&quot;-&gt;Go public]]
+[[&quot;It&#39;s too risky.&quot;-&gt;Say No to Joanna]] 
+</tw-passagedata><tw-passagedata pid="14" name="Hand the file back" tags="" position="1475,265" size="100,100">You slide the file back to him.
+
+&quot;That&#39;s not what I want,&quot; you say. &quot;I don&#39;t want your shady government backdoors. I&#39;m not switching places with him, but I&#39;m not leaving him to rot in jail. There&#39;s got to be another way&quot;
+
+Marcus looks exasperated. &quot;If there is, you won&#39;t find it through me. How do you still have an ounce of idealism in you? The execution is in 3 days. Some situations are too desperate to wait for a better answer.&quot;
 
 [[Take the file-&gt;Take the file]] 
-[[Walk out the door-&gt;Phone List]] </tw-passagedata><tw-passagedata pid="15" name="Take the file" tags="" position="1524,438" size="100,100">Without a word you tuck the purple folder under your arm and walk out of the room.
+[[Get up and leave the cafe-&gt;Phone List]] </tw-passagedata><tw-passagedata pid="15" name="Take the file" tags="" position="1475,432" size="100,100">Without a word you tuck the file into your coat and walk out of the room.
 
-Next things that happen:
-
-- You switch places with your son and land in jail
-- Your execution approaches and you have to break the law to escape
-- You meet some other inmates who were hurt by your algorithm and have to lie to them to escape
-
-Or should it be that Jo &amp; the Government trapped you?
-
-[[Next-&gt;2 Days Before the Execution]] </tw-passagedata><tw-passagedata pid="16" name="Jeremy" tags="" position="888,127" size="200,100">
+[[Next-&gt;2 Days Before the Execution]] </tw-passagedata><tw-passagedata pid="16" name="Jeremy" tags="" position="888,127" size="200,100">&lt;&lt;set $calledJeremy to true&gt;&gt;
 [ @NOTE: remove this in final draft, used for debugging ]
 &lt;&lt;if $songuilt is 0&gt;&gt;
 Jeremy is innocent.
@@ -370,16 +418,34 @@ Jeremy is guilty.
 
 You almost dial Jeremy&#39;s number before remembering that all his possessions were confiscated after the trial.
 
-Guess you&#39;ll have to wait and see if there&#39;s another way to contact him.
+Guess you&#39;ll have to wait until there&#39;s another way to contact him.
 
 [[Back-&gt;Phone List]] </tw-passagedata><tw-passagedata pid="17" name="Leave the Visitor&#39;s Center" tags="" position="425,809" size="100,100">
+You stand on the busy streets of the city, looking off toward the Capital. The tick of every second brings you closer to the decisions you know might destroy you.
 
+It&#39;s time for you to choose. 
 
-[[Phone List]] </tw-passagedata><tw-passagedata pid="18" name="Marcus" tags="" position="1260,333" size="200,100">&lt;&lt;set $calledMarcus to true&gt;&gt;
+How will you save your son with odds like these? You can&#39;t do it alone.
 
-Marcus is silent for a long time, then gets up and pulls an innocuous-looking manila-colored file out of his desk. He hesitates almost imperceptibly before handing it to you.
+It&#39;s time to call someone for help.
 
-You look at him quizzically, then open it. There&#39;s a stack of forms inside, labeled &quot;EXCEPTION REPORT.&quot;
+[[Power on your phone-&gt;Phone List]] </tw-passagedata><tw-passagedata pid="18" name="Marcus" tags="" position="1174,333" size="200,100">&lt;&lt;set $calledMarcus to true&gt;&gt;
+
+You&#39;re sitting at a cafe watching the pigeons peck at crumbs on the sidewalk when someone drops their napkin straight into your cup of coffee.
+
+&quot;Oops,&quot; a voice chuckles in your ear.
+
+Marcus gracefully slides into the seat across from you. His gray suit and tie are immaculate. 
+
+You resist the urge to grimace, trying to figure out his game. It was always a risk asking for favors from people who knew his true involvement with $algoname. You needed to stay on his good side.
+
+[ @TODO: Add more dialogue here ]
+
+Your conversation is safely folded into the hubbub from pedestrians and streetgoers nearby.
+
+Marcus pulls an innocuous-looking manila-colored file out of his briefcase. He hesitates almost imperceptibly before sliding it across the wire-wrought table toward you.
+
+You glance at him quizzically, then open it. There&#39;s a stack of forms inside, labeled &quot;EXCEPTION REPORT&quot;.
 
 &quot;You could switch places with him.&quot;
 
@@ -391,7 +457,7 @@ You look up in shock.
 
 &quot;What about the charges?&quot; you press. &quot;Will the execution still proceed?&quot; Doubt brews in your gut, but desperation is speaking louder than anything.
 
-He looks nervous. &quot;I don&#39;t know. There are ways...I don&#39;t know. But I do know how much you care about your son.&quot;
+He looks genuinely nervous for once. &quot;I don&#39;t know. There are ways...I don&#39;t know. But I do know how much you care about your son. I get it.&quot;
 
 You rifle through the forms. Sixty jargon-filled pages of paper could set your boy free. But even if this works, what are the chances you&#39;ll actually be able to make it out of prison in time?
 
@@ -423,15 +489,19 @@ You unlocked &quot;???&quot;
 
 You wake up and your nose immediately fills with the stench of sweat, urine, and fear. It&#39;s so stifling that you almost wish you were unconscious again.
 
-It had been easier than you&#39;d expected to switch places with him. With the help of Marcus, Jeremy had been escorted out last night. Hours later, you were thrown in. 
+It had been easier than you&#39;d expected to switch places with him. With the help of Marcus, Jeremy had been escorted out last night. Hours later, you were thrown in unceremoniously on some trumped-up charges that you fabricated. 
 
 It didn&#39;t make up for anything, but at least he was safe.
+
+Now this was your problem alone.
 
 You look around the dank cell. It&#39;s barren save for a lanky teenager seated in the corner opposite from you. He looks relaxed, casually lobbing a ball repeatedly against the concrete cell wall with a soft //thunk//. He doesn&#39;t give any sign of noticing that you&#39;re conscious.
 
 [[Ask him for his name-&gt;Talk to cellmate]]
 [[Ignore him-&gt;Ignore cellmate]]</tw-passagedata><tw-passagedata pid="22" name="Talk to cellmate" tags="" position="2092,509" size="100,100">
-&quot;Hello,&quot; you speak for the first time in 12 hours, your voice 
+&quot;Hello,&quot; you speak for the first time in 12 hours, your voice gravelly.
+
+The kid doesn&#39;t stop playing tennis with the wall but turns and gives you the barest glance.
 
 
 [[Cellmate asks questions]] </tw-passagedata><tw-passagedata pid="23" name="Ignore cellmate" tags="" position="2335,507" size="100,100">
@@ -458,13 +528,13 @@ It hits especially hard knowing how your son had to grow up without a mother.
 &quot;But what do I know? The Algorithm is flawless, after all. They say it&#39;s been trained on thousands of decisions of the highest ethical and moral complexity. It doesn&#39;t make mistakes, and it&#39;s sure not as biased as we are.&quot;
 
 [[&quot;That&#39;s right&quot;-&gt;Agree that Algo is not biased]]
-[[&quot;Well...&quot;-&gt;Disagree And Say Algo is biased]]</tw-passagedata><tw-passagedata pid="26" name="Cellmate asks questions" tags="" position="2209,663.5" size="100,100">&quot;So why are //you// in here?&quot; he asks, looking you up and down a bit suspiciously.
+[[&quot;Well...&quot;-&gt;Disagree And Say Algo is biased]]</tw-passagedata><tw-passagedata pid="26" name="Cellmate asks questions" tags="" position="2209,663" size="100,100">&quot;So why are //you// in here?&quot; he asks, looking you up and down a bit suspiciously.
 
 
 &quot;I&#39;m here because...
 
 [[Lie-&gt;Lie to cellmate]]
-[[Tell the truth-&gt;Tell the truth to cellmate]]</tw-passagedata><tw-passagedata pid="27" name="Agree that Algo is not biased" tags="" position="2083,964" size="100,100">[[Cellmate Asks How You Know]] </tw-passagedata><tw-passagedata pid="28" name="Disagree And Say Algo is biased" tags="" position="2257,964" size="100,100">[[Cellmate Asks How You Know]] </tw-passagedata><tw-passagedata pid="29" name="Cellmate Asks How You Know" tags="" position="2208,1104.5" size="100,100">&quot;How do you know?&quot; he asks, looking you up and down a bit suspiciously now.
+[[Tell the truth-&gt;Tell the truth to cellmate]]</tw-passagedata><tw-passagedata pid="27" name="Agree that Algo is not biased" tags="" position="2083,964" size="100,100">[[Cellmate Asks How You Know]] </tw-passagedata><tw-passagedata pid="28" name="Disagree And Say Algo is biased" tags="" position="2257,964" size="100,100">[[Cellmate Asks How You Know]] </tw-passagedata><tw-passagedata pid="29" name="Cellmate Asks How You Know" tags="" position="2208,1104" size="100,100">&quot;How do you know?&quot; he asks, looking you up and down a bit suspiciously now.
 
 If lied:
 [[Come clean-&gt;Tell the truth 2]]
@@ -474,8 +544,8 @@ If not lied:
 [[Tell the whole truth]]
 [[Lie-&gt;Lie again 2]]
 
-</tw-passagedata><tw-passagedata pid="30" name="Tell the truth 2" tags="" position="2058,1253.5" size="100,100">
-[[Cellmate Discovers Who You Are]] </tw-passagedata><tw-passagedata pid="31" name="Lie again 2" tags="" position="2208,1253.5" size="100,100">[[Cellmate Discovers Who You Are]] </tw-passagedata><tw-passagedata pid="32" name="Tell the whole truth" tags="" position="2358,1253.5" size="100,100">[[Cellmate Discovers Who You Are]] </tw-passagedata><tw-passagedata pid="33" name="Cellmate Discovers Who You Are" tags="" position="2217,1411.5" size="100,100">
+</tw-passagedata><tw-passagedata pid="30" name="Tell the truth 2" tags="" position="2058,1253" size="100,100">
+[[Cellmate Discovers Who You Are]] </tw-passagedata><tw-passagedata pid="31" name="Lie again 2" tags="" position="2208,1253" size="100,100">[[Cellmate Discovers Who You Are]] </tw-passagedata><tw-passagedata pid="32" name="Tell the whole truth" tags="" position="2358,1253" size="100,100">[[Cellmate Discovers Who You Are]] </tw-passagedata><tw-passagedata pid="33" name="Cellmate Discovers Who You Are" tags="" position="2217,1411" size="100,100">
 
 incites a riot
 
@@ -484,39 +554,66 @@ You need to escape. You look around the warden&#39;s office. What do you grab?
 
 [[Hammer-&gt;Hammer:Wrong Tool 1]]
 [[Megaphone-&gt;Megaphone:Right Tool 1]]
-[[Rope-&gt;Rope:Right Tool 2]]</tw-passagedata><tw-passagedata pid="34" name="Hammer:Wrong Tool 1" tags="" position="2067,1561.5" size="100,100">Double-click this passage to edit it.
+[[Rope-&gt;Rope:Right Tool 2]]</tw-passagedata><tw-passagedata pid="34" name="Hammer:Wrong Tool 1" tags="" position="2067,1561" size="100,100">Double-click this passage to edit it.
 
-[[Fail and die]] </tw-passagedata><tw-passagedata pid="35" name="Megaphone:Right Tool 1" tags="" position="2216,1561.5" size="100,100">Work together with the prisoners to free everyone
+[[Fail and die]] </tw-passagedata><tw-passagedata pid="35" name="Megaphone:Right Tool 1" tags="" position="2216,1561" size="100,100">Work together with the prisoners to free everyone
 
 Put a timer on this page, you have to figure out the right thing to say.
 
 [[Live and continue to fight]]
-[[Fail and die]]</tw-passagedata><tw-passagedata pid="36" name="Rope:Right Tool 2" tags="" position="2367,1561.5" size="100,100">Leave the prison by rappelling down from a window, leaving your fellow inmates behind to the mercy of your algorithm but guaranteeing that your son will have a father.
+[[Fail and die]]</tw-passagedata><tw-passagedata pid="36" name="Rope:Right Tool 2" tags="" position="2367,1561" size="100,100">Leave the prison by rappelling down from a window, leaving your fellow inmates behind to the mercy of your algorithm but guaranteeing that your son will have a father.
 
-[[Ending: Live but abandon everyone]]</tw-passagedata><tw-passagedata pid="37" name="Live and continue to fight" tags="" position="2085,1741.5" size="100,100">
+Just before you let go of the ledge, a thin hand grabs your arm. You try to shake it free, but it&#39;s a surprisingly strong grip. You look up to see your cellmate, the teenager whose name you never bothered to ask for. His bottom lip quivers but his eyes are resolute, and they stare at you with a look of utmost despair.
+
+&quot;It&#39;s not just your son, or just my mom. Me, everyone in this prison, in every prison in this country, is locked up because of your Algorithm. We are victims in a box, and you have the key. Are you really leaving us all to rot here?&quot;
+
+
+[[Ending: Live but abandon everyone]]</tw-passagedata><tw-passagedata pid="37" name="Live and continue to fight" tags="" position="2085,1741" size="100,100">
 You stay and fight for long-term reform somehow...with a day left to live if you fail.
 
-[[Next-&gt;1 Day Until the Execution]]</tw-passagedata><tw-passagedata pid="38" name="Fail and die" tags="" position="2300,1744.5" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="39" name="Ending: Live but abandon everyone" tags="" position="2571,1556.5" size="200,200">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="40" name="1 Day Until the Execution" tags="" position="2084,1891.5" size="200,200">&lt;&lt;type 40ms start 1s&gt;&gt;
+[[Next-&gt;1 Day Until the Execution]]</tw-passagedata><tw-passagedata pid="38" name="Fail and die" tags="" position="2300,1744" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="39" name="Ending: Live but abandon everyone" tags="" position="2571,1556" size="200,200">&lt;&lt;type 40ms start 1s&gt;&gt;
+	Ending 1.
+	You and your son escape your fates, but the millions of innocent lives convicted by $algoname still hang in the balance. 
+	&lt;&lt;if $songuilt is 0&gt;&gt;You later find out that Jeremy really was innocent. But consumed by survivor&#39;s guilt, you never talk to your son again.
+	&lt;&lt;elseif $songuilt is 1&gt;&gt;You later find out that Jeremy was actually guilty. Consumed by guilt and betrayal, you never talk to your son again.
+	&lt;&lt;/if&gt;&gt;
+&lt;&lt;/type&gt;&gt;
+&lt;&lt;timed 3s t8n&gt;&gt;
+	[[Credits-&gt;Credits]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="1 Day Until the Execution" tags="" position="2084,1891" size="200,200">&lt;&lt;type 40ms start 1s&gt;&gt;
 	1 Day Before the Execution
 &lt;&lt;/type&gt;&gt;
 &lt;&lt;type 40ms start 1s&gt;&gt;
 	[[Next-&gt;Day Three Start]]
-&lt;&lt;/type&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="Day Three Start" tags="" position="1873,2155.5" size="100,100">
-And continue this with the plot where you go public with the news that the algorithm is flawed. See how people react.</tw-passagedata><tw-passagedata pid="42" name="Go public" tags="" position="630,779" size="100,100">Double-click this passage to edit it.
+&lt;&lt;/type&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="Day Three Start" tags="" position="1873,2155" size="100,100">
+And continue this with the plot where you go public with the news that the algorithm is flawed. See how people react.
 
+[[&quot;Back to menu because I haven&#39;t finished writing this part :)&quot;-&gt;Phone List]]</tw-passagedata><tw-passagedata pid="42" name="Go public" tags="" position="630,779" size="100,100">There&#39;s no joy in her eyes, only resolve, as she nods.
 
-[[Joanna Route 2 Days Before the Execution]]</tw-passagedata><tw-passagedata pid="43" name="Say No to Joanna" tags="" position="828,801" size="100,100">&quot;No. I&#39;ll find another way.&quot;
+&quot;Meet me at the lab tonight. You&#39;ll have to break the passcode yourself though; I&#39;m not risking writing it down.&quot;
+
+You carefully affix the bug to the whiteboard and restore the room&#39;s wireless signal. 
+
+&quot;Thank you Professor,&quot; you say. You swiftly knock the photo off its frame on the wall into the trash can and leave the office in silence.
+
+[[Next-&gt;Joanna Route 2 Days Before the Execution]]</tw-passagedata><tw-passagedata pid="43" name="Say No to Joanna" tags="" position="828,801" size="100,100">&quot;No. I&#39;ll find another way.&quot;
+
+She cocks her head and looks at you as if seeing you for the first time. 
+
+&quot;I know I&#39;m overstepping again. But you don&#39;t have another plan. The only way you&#39;ve had ever since you just started is to keep your head down. But that&#39;s not what your kid needs right now.&quot;
+
+It&#39;s what you already know is true...but you won&#39;t be any use to anyone, much less Jeremy, if you fail. The fear keeps your lips sealed firmly shut. The clock on the rear wall beeps softly - your five minutes of safe conversation are nearly up.
+
+&quot;You need to have courage.&quot;
 
 [[&quot;Ok.&quot;-&gt;Go public]]
-[[Walk out of the room-&gt;Phone List]] </tw-passagedata><tw-passagedata pid="44" name="Detective Friend" tags="" position="1014,578" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="45" name="Joanna Route 2 Days Before the Execution" tags="" position="630,929" size="100,100">&lt;&lt;type 40ms start 1s&gt;&gt;
+[[Leave Joanna&#39;s Office-&gt;Phone List]] </tw-passagedata><tw-passagedata pid="44" name="Detective Friend" tags="" position="1014,578" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="45" name="Joanna Route 2 Days Before the Execution" tags="" position="630,929" size="100,100">&lt;&lt;type 40ms start 1s&gt;&gt;
 	2 Days Before the Execution
 &lt;&lt;/type&gt;&gt;
 &lt;&lt;type 40ms start 1s&gt;&gt;
 	[[Next-&gt;Joanna Day Two Start]]
 &lt;&lt;/type&gt;&gt;</tw-passagedata><tw-passagedata pid="46" name="Joanna Day Two Start" tags="" position="630,1079" size="100,100">
-You wake up to the headlines exposing you as the &quot;Evil Genius&quot; behind the algorithm.
-
-[[Hearing with the Senate]]</tw-passagedata><tw-passagedata pid="47" name="Hearing with the Senate" tags="" position="630,1229" size="100,100">
+[[&quot;Back to menu because I haven&#39;t finished writing this part :)&quot;-&gt;Phone List]]</tw-passagedata><tw-passagedata pid="47" name="Hearing with the Senate" tags="" position="630,1229" size="100,100">
 
 You ask for:
 [[The algorithm to be scrapped]]
@@ -534,17 +631,19 @@ Course: Writing 220 Fall 2020
 Music: [[https://freesound.org/people/ERH/sounds/33987/]]
 
 
-[[Back-&gt;Intro Screen and Story Init]] </tw-passagedata><tw-passagedata pid="52" name="Son Part 2" tags="" position="561,422" size="100,100">&quot;...I don&#39;t know why you came, dad. I already know what you&#39;re going to say.&quot;
+[[Back to Starting Screen-&gt;Intro Screen and Story Init]] </tw-passagedata><tw-passagedata pid="52" name="Son Part 2" tags="" position="561,422" size="100,100">&quot;...I don&#39;t know why you came, dad. I already know what you&#39;re going to say.&quot;
 
 You look into Jeremy&#39;s face and see yourself as he sees you: a feeble middle-aged guy still grieving the loss of his wife, too absent to look out for his boy. Wouldn&#39;t win in any fight. Capable of writing in 20 different programming languages but unable to produce the comforting words his child needs.
 
 All of it was true. Every single day for the two decades since the $algoname project disbanded, the regret has sat in a deep place inside you, churning like a sea monster. Most days you try not to think about it, but it comes out to haunt you from unsuspecting things: newspaper headlines of children being sent to jail, people disappearing, multiple convictions for one-person crimes. 
 
-You envy those who trust the system blindly. What you would give, to have that kind of trust for your own creation. Instead, every night is a replay of all the mistakes you made with $algoname flashing in your brain. But the systems are too ingrained to change now.
+You envy those who trust the system blindly. What you would give, to have that kind of trust for your own creation. Instead, every night is a replay of all the mistakes you made with $algoname flashing in your brain. 
 
-&quot;My hands are tied,&quot; you say, at the same time that he does. He adds, &quot;Except mine are //literally// tied.&quot; 
+There&#39;s so much you wish you could say, but everything is dangerous. The systems are too ingrained to change now.
 
-The resentment in his voice is so familiar that it fills you with a sense of comfort. //Let him be angry at me//, you think. Let him be angry at something that can&#39;t punish him for that anger. You deserve it, for not being able to admit that you&#39;re the reason he&#39;s in pain.
+&quot;My hands are tied,&quot; you say, at the same time that he does. He adds, &quot;Except mine are //literally// tied. I know you&#39;re not telling me everything.&quot; 
+
+The resentment in his voice is so familiar that it fills you with a strange of comfort. //Let him be angry at me//, you think. Let him be angry at something that can&#39;t punish him for that anger. You deserve it, for not being able to admit that you&#39;re the reason he&#39;s in pain.
 
 At the sight of your son shaved and tattoed, doomed to die in the name of some twisted version of justice, the age-old regret explodes into an all-consuming guilt that you don&#39;t know what to do with.
 
@@ -552,7 +651,7 @@ He slumps back in his seat, seemingly defeated. A cloud of emotion settles over 
 
 &quot;...I&#39;m not a murderer,&quot; Jeremy says, his voice on the edge of tears.
 
-[[&quot;&#39;I believe you&#39;&quot;|Believe]]</tw-passagedata></tw-storydata>
+[[&quot;&#39;I believe you&#39;&quot;-&gt;Believe]]</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
 	if(document.documentElement.getAttribute("data-init")==="loading"){!function(window,document,jQuery,undefined){"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)}var _createClass=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_slicedToArray=function(){function e(e,t){var r=[],n=!0,a=!1,i=undefined;try{for(var o,s=e[Symbol.iterator]();!(n=(o=s.next()).done)&&(r.push(o.value),!t||r.length!==t);n=!0);}catch(e){a=!0,i=e}finally{try{!n&&s.return&&s.return()}finally{if(a)throw i}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},errorPrologRegExp=/^(?:(?:uncaught\s+(?:exception:\s+)?)?\w*(?:error|exception|_err):\s+)+/i,Alert=function(){function e(e,t,r,n){var a="fatal"===e,i="Apologies! "+(a?"A fatal":"An")+" error has occurred.";i+=a?" Aborting.":" You may be able to continue, but some parts may not work properly.",null==t&&null==r||(i+="\n\nError",null!=t&&(i+=" ["+t+"]"),i+=null!=r?": "+r.replace(errorPrologRegExp,"")+".":": unknown error."),"object"===(void 0===n?"undefined":_typeof(n))&&null!==n&&n.stack&&(i+="\n\nStack Trace:\n"+n.stack),window.alert(i)}function t(t,r,n){e(null,t,r,n)}function r(t,r,n){e("fatal",t,r,n)}return function(e){window.onerror=function(n,a,i,o,s){"complete"===document.readyState?t(null,n,s):(r(null,n,s),window.onerror=e,"function"==typeof window.onerror&&window.onerror.apply(this,arguments))}}(window.onerror),Object.freeze(Object.defineProperties({},{error:{value:t},fatal:{value:r}}))}(),Patterns=function(){var e=function(){var e=new Map([[" ","\\u0020"],["\f","\\f"],["\n","\\n"],["\r","\\r"],["\t","\\t"],["\v","\\v"],[" ","\\u00a0"],[" ","\\u1680"],["᠎","\\u180e"],[" ","\\u2000"],[" ","\\u2001"],[" ","\\u2002"],[" ","\\u2003"],[" ","\\u2004"],[" ","\\u2005"],[" ","\\u2006"],[" ","\\u2007"],[" ","\\u2008"],[" ","\\u2009"],[" ","\\u200a"],["\u2028","\\u2028"],["\u2029","\\u2029"],[" ","\\u202f"],[" ","\\u205f"],["　","\\u3000"],["\ufeff","\\ufeff"]]),t=/^\s$/,r="";return e.forEach(function(e,n){t.test(n)||(r+=e)}),r?"[\\s"+r+"]":"\\s"}(),t="[\\u0020\\f\\t\\v\\u00a0\\u1680\\u180e\\u2000-\\u200a\\u202f\\u205f\\u3000\\ufeff]",r="\\s"===e?"\\S":e.replace(/^\[/,"[^"),n="[0-9A-Z_a-z\\-\\u00c0-\\u00d6\\u00d8-\\u00f6\\u00f8-\\u00ff\\u0150\\u0170\\u0151\\u0171]",a=n.replace("\\-",""),i=function(){return"("+n+"+)\\(([^\\)\\|\\n]+)\\):|"+t+"*("+n+"+)"+t+"*:([^;\\|\\n]+);|"+t+"*((?:[#.]"+n+"+"+t+"*)+);"}();return Object.freeze({space:e,spaceNoTerminator:t,lineTerminator:"[\\n\\r\\u2028\\u2029]",notSpace:r,anyChar:"(?:.|[\\n\\r\\u2028\\u2029])",anyLetter:n,anyLetterStrict:a,identifierFirstChar:"[$A-Z_a-z]",identifierNextChar:"[$0-9A-Z_a-z]",identifier:"[$A-Z_a-z][$0-9A-Z_a-z]*",variableSigil:"[$_]",variable:"[$_][$A-Z_a-z][$0-9A-Z_a-z]*",macroName:"[A-Za-z][\\w-]*|[=-]",templateName:"[A-Za-z][\\w-]*",cssIdOrClassSigil:"[#.]",cssImage:"\\[[<>]?[Ii][Mm][Gg]\\[(?:\\s|\\S)*?\\]\\]+",inlineCss:i,url:"(?:file|https?|mailto|ftp|javascript|irc|news|data):[^\\s'\"]+"})}();!function(){function e(e,t){var r=Number.parseInt(e,10)||0;if(r<1)return"";var n=void 0===t?"":String(t);for(""===n&&(n=" ");n.length<r;){var a=n.length,i=r-a;n+=a>i?n.slice(0,i):n}return n.length>r&&(n=n.slice(0,r)),n}var t=function(){function e(e,n){var a=String(e);if(!a)return a;switch(n){case"start":return t.test(a)?a.replace(t,""):a;case"end":return r.test(a)?a.replace(r,""):a;default:throw new Error('_trimString called with incorrect where parameter value: "'+n+'"')}}var t=new RegExp("^"+Patterns.space+Patterns.space+"*"),r=new RegExp(""+Patterns.space+Patterns.space+"*$");return e}();Array.prototype.flat||Object.defineProperty(Array.prototype,"flat",{configurable:!0,writable:!0,value:function(){function e(){if(null==this)throw new TypeError("Array.prototype.flat called on null or undefined");var t=0===arguments.length?1:Number(arguments[0])||0;return t<1?Array.prototype.slice.call(this):Array.prototype.reduce.call(this,function(r,n){return n instanceof Array?r.push.apply(r,_toConsumableArray(e.call(n,t-1))):r.push(n),r},[])}return e}()}),Array.prototype.flatMap||Object.defineProperty(Array.prototype,"flatMap",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatMap called on null or undefined");return Array.prototype.map.apply(this,arguments).flat()}}),Array.prototype.includes||Object.defineProperty(Array.prototype,"includes",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includes called on null or undefined");if(0===arguments.length)return!1;var e=this.length>>>0;if(0===e)return!1;var t=arguments[0],r=Number(arguments[1])||0;for(r<0&&(r=Math.max(0,e+r));r<e;++r){var n=this[r];if(n===t||n!==n&&t!==t)return!0}return!1}}),Object.entries||Object.defineProperty(Object,"entries",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.entries object parameter must be an object");return Object.keys(e).map(function(t){return[t,e[t]]})}}),Object.fromEntries||Object.defineProperty(Object,"fromEntries",{configurable:!0,writable:!0,value:function(e){return Array.from(e).reduce(function(e,t){if(Object(t)!==t)throw new TypeError("Object.fromEntries iterable parameter must yield objects");return t[0]in e?Object.defineProperty(e,t[0],{configurable:!0,enumerable:!0,writable:!0,value:t[1]}):e[t[0]]=t[1],e},{})}}),Object.getOwnPropertyDescriptors||Object.defineProperty(Object,"getOwnPropertyDescriptors",{configurable:!0,writable:!0,value:function(e){if(null==e)throw new TypeError("Object.getOwnPropertyDescriptors object parameter is null or undefined");var t=Object(e);return Reflect.ownKeys(t).reduce(function(e,r){var n=Object.getOwnPropertyDescriptor(t,r);return void 0!==n&&(r in e?Object.defineProperty(e,r,{configurable:!0,enumerable:!0,writable:!0,value:n}):e[r]=n),e},{})}}),Object.values||Object.defineProperty(Object,"values",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)throw new TypeError("Object.values object parameter must be an object");return Object.keys(e).map(function(t){return e[t]})}}),String.prototype.padStart||Object.defineProperty(String.prototype,"padStart",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padStart called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:e(i-a,r)+n}}),String.prototype.padEnd||Object.defineProperty(String.prototype,"padEnd",{configurable:!0,writable:!0,value:function(t,r){if(null==this)throw new TypeError("String.prototype.padEnd called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(t,10);return i<=a?n:n+e(i-a,r)}}),String.prototype.trimStart||Object.defineProperty(String.prototype,"trimStart",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimStart called on null or undefined");return t(this,"start")}}),String.prototype.trimLeft||Object.defineProperty(String.prototype,"trimLeft",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimLeft called on null or undefined");return t(this,"start")}}),String.prototype.trimEnd||Object.defineProperty(String.prototype,"trimEnd",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimEnd called on null or undefined");return t(this,"end")}}),String.prototype.trimRight||Object.defineProperty(String.prototype,"trimRight",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimRight called on null or undefined");return t(this,"end")}})}(),function(){function _random(){var e=void 0,t=void 0;switch(arguments.length){case 0:throw new Error("_random called with insufficient parameters");case 1:e=0,t=arguments[0];break;default:e=arguments[0],t=arguments[1]}if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.floor(_nativeMathRandom()*(t-e+1))+e}function _randomIndex(e,t){var r=void 0,n=void 0;switch(t.length){case 1:r=0,n=e-1;break;case 2:r=0,n=Math.trunc(t[1]);break;default:r=Math.trunc(t[1]),n=Math.trunc(t[2])}return Number.isNaN(r)?r=0:!Number.isFinite(r)||r>=e?r=e-1:r<0&&(r=e+r)<0&&(r=0),Number.isNaN(n)?n=0:!Number.isFinite(n)||n>=e?n=e-1:n<0&&(n=e+n)<0&&(n=e-1),_random(r,n)}function _getCodePointStartAndEnd(e,t){var r=e.charCodeAt(t);if(Number.isNaN(r))return{char:"",start:-1,end:-1};if(r<55296||r>57343)return{char:e.charAt(t),start:t,end:t};if(r>=55296&&r<=56319){var n=t+1;if(n>=e.length)throw new Error("high surrogate without trailing low surrogate");var a=e.charCodeAt(n);if(a<56320||a>57343)throw new Error("high surrogate without trailing low surrogate");return{char:e.charAt(t)+e.charAt(n),start:t,end:n}}if(0===t)throw new Error("low surrogate without leading high surrogate");var i=t-1,o=e.charCodeAt(i);if(o<55296||o>56319)throw new Error("low surrogate without leading high surrogate");return{char:e.charAt(i)+e.charAt(t),start:i,end:t}}var _nativeMathRandom=Math.random;Object.defineProperty(Array,"random",{configurable:!0,writable:!0,value:function(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e||!Object.prototype.hasOwnProperty.call(e,"length"))throw new TypeError("Array.random array parameter must be an array or array-lke object");var t=e.length>>>0;if(0!==t){return e[0===arguments.length?_random(0,t-1):_randomIndex(t,Array.prototype.slice.call(arguments,1))]}}}),Object.defineProperty(Array.prototype,"concatUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.concatUnique called on null or undefined");var e=Array.from(this);if(0===arguments.length)return e;var t=Array.prototype.reduce.call(arguments,function(e,t){return e.concat(t)},[]),r=t.length;if(0===r)return e;for(var n=Array.prototype.indexOf,a=Array.prototype.push,i=0;i<r;++i){var o=t[i];-1===n.call(e,o)&&a.call(e,o)}return e}}),Object.defineProperty(Array.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.count called on null or undefined");for(var e=Array.prototype.indexOf,t=arguments[0],r=Number(arguments[1])||0,n=0;-1!==(r=e.call(this,t,r));)++n,++r;return n}}),Object.defineProperty(Array.prototype,"delete",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.delete called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.concat.apply([],arguments),r=t.length,n=[],a=0;a<e;++a)for(var i=this[a],o=0;o<r;++o){var s=t[o];if(i===s||i!==i&&s!==s){n.push(a);break}}for(var u=[],l=0,c=n.length;l<c;++l)u[l]=this[n[l]];for(var d=Array.prototype.splice,f=n.length-1;f>=0;--f)d.call(this,n[f],1);return u}}),Object.defineProperty(Array.prototype,"deleteAt",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.deleteAt called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.splice,r=[].concat(_toConsumableArray(new Set(Array.prototype.concat.apply([],arguments).map(function(t){return t<0?Math.max(0,e+t):t})).values())),n=[].concat(_toConsumableArray(r)).sort(function(e,t){return t-e}),a=[],i=0,o=r.length;i<o;++i)a[i]=this[r[i]];for(var s=0,u=n.length;s<u;++s)t.call(this,n[s],1);return a}}),Object.defineProperty(Array.prototype,"deleteWith",{configurable:!0,writable:!0,value:function(e,t){if(null==this)throw new TypeError("Array.prototype.deleteWith called on null or undefined");if("function"!=typeof e)throw new Error("Array.prototype.deleteWith predicate parameter must be a function");var r=this.length>>>0;if(0===r)return[];for(var n=Array.prototype.splice,a=[],i=[],o=0;o<r;++o)e.call(t,this[o],o,this)&&(i.push(this[o]),a.push(o));for(var s=a.length-1;s>=0;--s)n.call(this,a[s],1);return i}}),Object.defineProperty(Array.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.first called on null or undefined");if(0!=this.length>>>0)return this[0]}}),Object.defineProperty(Array.prototype,"includesAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAll called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAll.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(!Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!1;return!0}}),Object.defineProperty(Array.prototype,"includesAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAny called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAny.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!0;return!1}}),Object.defineProperty(Array.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.last called on null or undefined");var e=this.length>>>0;if(0!==e)return this[e-1]}}),Object.defineProperty(Array.prototype,"pluck",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pluck called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return Array.prototype.splice.call(this,t,1)[0]}}}),Object.defineProperty(Array.prototype,"pluckMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.pluckMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.pluckMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=Array.prototype.splice,a=[],i=t-1;do{a.push(n.call(this,_random(0,i--),1)[0])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"pushUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pushUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.push,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Array.prototype,"random",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.random called on null or undefined");var e=this.length>>>0;if(0!==e){return this[0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)))]}}}),Object.defineProperty(Array.prototype,"randomMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.randomMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.randomMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=new Map,a=[],i=t-1;do{var o=void 0;do{o=_random(0,i)}while(n.has(o));n.set(o,!0),a.push(this[o])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"shuffle",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.shuffle called on null or undefined");var e=this.length>>>0;if(0===e)return this;for(var t=e-1;t>0;--t){var r=Math.floor(_nativeMathRandom()*(t+1));if(t!==r){var n=this[t];this[t]=this[r],this[r]=n}}return this}}),Object.defineProperty(Array.prototype,"unshiftUnique",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.unshiftUnique called on null or undefined");var e=arguments.length;if(0===e)return this.length>>>0;for(var t=Array.prototype.indexOf,r=Array.prototype.unshift,n=0;n<e;++n){var a=arguments[n];-1===t.call(this,a)&&r.call(this,a)}return this.length>>>0}}),Object.defineProperty(Function.prototype,"partial",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Function.prototype.partial called on null or undefined");var e=Array.prototype.slice,t=this,r=e.call(arguments,0);return function(){for(var n=[],a=0,i=0;i<r.length;++i)n.push(r[i]===undefined?arguments[a++]:r[i]);return t.apply(this,n.concat(e.call(arguments,a)))}}}),Object.defineProperty(Math,"clamp",{configurable:!0,writable:!0,value:function(e,t,r){var n=Number(e);return Number.isNaN(n)?NaN:n.clamp(t,r)}}),Object.defineProperty(Math,"easeInOut",{configurable:!0,writable:!0,value:function(e){return 1-(Math.cos(Number(e)*Math.PI)+1)/2}}),Object.defineProperty(Number.prototype,"clamp",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Number.prototype.clamp called on null or undefined");if(2!==arguments.length)throw new Error("Number.prototype.clamp called with an incorrect number of parameters");var e=Number(arguments[0]),t=Number(arguments[1]);if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.min(Math.max(this,e),t)}}),RegExp.escape||function(){var e=/[\\^$*+?.()|[\]{}]/g,t=new RegExp(e.source);Object.defineProperty(RegExp,"escape",{configurable:!0,writable:!0,value:function(r){var n=String(r);return n&&t.test(n)?n.replace(e,"\\$&"):n}})}(),function(){var e=/{(\d+)(?:,([+-]?\d+))?}/g,t=new RegExp(e.source);Object.defineProperty(String,"format",{configurable:!0,writable:!0,value:function(r){function n(e,t,r){if(!t)return e;var n=Math.abs(t)-e.length;if(n<1)return e;var a=String(r).repeat(n);return t<0?e+a:a+e}if(arguments.length<2)return 0===arguments.length?"":r;var a=2===arguments.length&&Array.isArray(arguments[1])?[].concat(_toConsumableArray(arguments[1])):Array.prototype.slice.call(arguments,1);return 0===a.length?r:t.test(r)?(e.lastIndex=0,r.replace(e,function(e,t,r){var i=a[t];if(null==i)return"";for(;"function"==typeof i;)i=i();switch(void 0===i?"undefined":_typeof(i)){case"string":break;case"object":i=JSON.stringify(i);break;default:i=String(i)}return n(i,r?Number.parseInt(r,10):0," ")})):r}})}(),Object.defineProperty(String.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.contains called on null or undefined");return-1!==String.prototype.indexOf.apply(this,arguments)}}),Object.defineProperty(String.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.count called on null or undefined");var e=String(arguments[0]||"");if(""===e)return 0;for(var t=String.prototype.indexOf,r=e.length,n=Number(arguments[1])||0,a=0;-1!==(n=t.call(this,e,n));)++a,n+=r;return a}}),Object.defineProperty(String.prototype,"first",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.first called on null or undefined");return _getCodePointStartAndEnd(String(this),0).char}}),Object.defineProperty(String.prototype,"last",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.last called on null or undefined");var e=String(this);return _getCodePointStartAndEnd(e,e.length-1).char}}),Object.defineProperty(String.prototype,"splice",{configurable:!0,writable:!0,value:function(e,t,r){if(null==this)throw new TypeError("String.prototype.splice called on null or undefined");var n=this.length>>>0;if(0===n)return"";var a=Number(e);Number.isSafeInteger(a)?a<0&&(a+=n)<0&&(a=0):a=0,a>n&&(a=n);var i=Number(t);(!Number.isSafeInteger(i)||i<0)&&(i=0);var o=this.slice(0,a);return void 0!==r&&(o+=r),a+i<n&&(o+=this.slice(a+i)),o}}),Object.defineProperty(String.prototype,"splitOrEmpty",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.splitOrEmpty called on null or undefined");return""===String(this)?[]:String.prototype.split.apply(this,arguments)}}),Object.defineProperty(String.prototype,"toLocaleUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toLocaleUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toLocaleUpperCase()+e.slice(n+1)}}),Object.defineProperty(String.prototype,"toUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return-1===n?"":r.toUpperCase()+e.slice(n+1)}}),Object.defineProperty(Date.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:date)",this.toISOString()]}}),Object.defineProperty(Function.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)","("+this.toString()+")"]}}),Object.defineProperty(Map.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:map)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(RegExp.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)",this.toString()]}}),Object.defineProperty(Set.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:set)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(JSON,"reviveWrapper",{configurable:!0,writable:!0,value:function(e,t){if("string"!=typeof e)throw new TypeError("JSON.reviveWrapper code parameter must be a string");return["(revive:eval)",[e,t]]}}),Object.defineProperty(JSON,"_real_parse",{value:JSON.parse}),Object.defineProperty(JSON,"parse",{configurable:!0,writable:!0,value:function value(text,reviver){return JSON._real_parse(text,function(key,val){var value=val;if(Array.isArray(value)&&2===value.length)switch(value[0]){case"(revive:set)":value=new Set(value[1]);break;case"(revive:map)":value=new Map(value[1]);break;case"(revive:date)":value=new Date(value[1]);break;case"(revive:eval)":try{if(Array.isArray(value[1])){var $ReviveData$=value[1][1];value=eval(value[1][0])}else value=eval(value[1])}catch(e){}}else if("string"==typeof value&&"@@revive@@"===value.slice(0,10))try{value=eval(value.slice(10))}catch(e){}if("function"==typeof reviver)try{value=reviver(key,value)}catch(e){}return value})}}),Object.defineProperty(Array.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.contains called on null or undefined");return Array.prototype.includes.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAll called on null or undefined");return Array.prototype.includesAll.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAny called on null or undefined");return Array.prototype.includesAny.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"flatten",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatten called on null or undefined");return Array.prototype.flat.call(this,1/0)}}),Object.defineProperty(String.prototype,"readBracketedList",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.readBracketedList called on null or undefined");for(var e=new RegExp("(?:\\[\\[((?:\\s|\\S)*?)\\]\\])|([^\"'\\s]\\S*)","gm"),t=[],r=void 0;null!==(r=e.exec(this));)r[1]?t.push(r[1]):r[2]&&t.push(r[2]);return t}})}();var Browser=function(){var e=navigator.userAgent.toLowerCase(),t=e.includes("windows phone"),r=Object.freeze({Android:!t&&e.includes("android"),BlackBerry:/blackberry|bb10/.test(e),iOS:!t&&/ip(?:hone|ad|od)/.test(e),Opera:!t&&("object"===_typeof(window.operamini)||e.includes("opera mini")),Windows:t||/iemobile|wpdesktop/.test(e),any:function(){return r.Android||r.BlackBerry||r.iOS||r.Opera||r.Windows}}),n=!r.Windows&&!/khtml|trident|edge/.test(e)&&e.includes("gecko"),a=!e.includes("opera")&&/msie|trident/.test(e),i=a?function(){var t=/(?:msie\s+|rv:)(\d+\.\d)/.exec(e);return t?Number(t[1]):0}():null,o=e.includes("opera")||e.includes(" opr/"),s=o?function(){var t=new RegExp((/khtml|chrome/.test(e)?"opr":"version")+"\\/(\\d+\\.\\d+)"),r=t.exec(e);return r?Number(r[1]):0}():null,u=e.includes("vivaldi");return Object.freeze({userAgent:e,isMobile:r,isGecko:n,isIE:a,ieVersion:i,isOpera:o,operaVersion:s,isVivaldi:u})}(),Has=function(){var e=function(){try{return"function"==typeof document.createElement("audio").canPlayType}catch(e){}return!1}(),t=function(){try{return"Blob"in window&&"File"in window&&"FileList"in window&&"FileReader"in window&&!Browser.isMobile.any()&&(!Browser.isOpera||Browser.operaVersion>=15)}catch(e){}return!1}(),r=function(){try{return"geolocation"in navigator&&"function"==typeof navigator.geolocation.getCurrentPosition&&"function"==typeof navigator.geolocation.watchPosition}catch(e){}return!1}(),n=function(){try{return"MutationObserver"in window&&"function"==typeof window.MutationObserver}catch(e){}return!1}(),a=function(){try{return"performance"in window&&"function"==typeof window.performance.now}catch(e){}return!1}(),i=function(){try{return"ontouchstart"in window||!!window.DocumentTouch&&document instanceof window.DocumentTouch||!!navigator.maxTouchPoints||!!navigator.msMaxTouchPoints}catch(e){}return!1}(),o=function(){try{for(var e=new Map([["transition","transitionend"],["MSTransition","msTransitionEnd"],["WebkitTransition","webkitTransitionEnd"],["MozTransition","transitionend"]]),t=[].concat(_toConsumableArray(e.keys())),r=document.createElement("div"),n=0;n<t.length;++n)if(r.style[t[n]]!==undefined)return e.get(t[n])}catch(e){}return!1}();return Object.freeze({audio:e,fileAPI:t,geolocation:r,mutationObserver:n,performance:a,touch:i,transitionEndEvent:o})}(),Visibility=function(){function e(){return a}function t(){return a&&document[a.stateProperty]||"visible"}function r(){return Boolean(a)}function n(){return Boolean(a&&document[a.hiddenProperty])}var a=function(){try{return Object.freeze([{hiddenProperty:"hidden",stateProperty:"visibilityState",changeEvent:"visibilitychange"},{hiddenProperty:"webkitHidden",stateProperty:"webkitVisibilityState",changeEvent:"webkitvisibilitychange"},{hiddenProperty:"mozHidden",stateProperty:"mozVisibilityState",changeEvent:"mozvisibilitychange"},{hiddenProperty:"msHidden",stateProperty:"msVisibilityState",changeEvent:"msvisibilitychange"}].find(function(e){return e.hiddenProperty in document}))}catch(e){}return undefined}();return Object.freeze(Object.defineProperties({},{vendor:{get:e},state:{get:t},isEnabled:{value:r},isHidden:{value:n},hiddenProperty:{value:a&&a.hiddenProperty},stateProperty:{value:a&&a.stateProperty},changeEvent:{value:a&&a.changeEvent}}))}(),Fullscreen=function(){function e(e){var t=e||document.documentElement;return t===document.documentElement&&("msRequestFullscreen"===f.requestFn||Browser.isOpera&&Browser.operaVersion<15)&&(t=document.body),t}function t(){return f}function r(){return(f||null)&&document[f.element]}function n(){return Boolean(f&&document[f.isEnabled])}function a(){return Boolean(f&&document[f.element])}function i(t,r){var n=this;if(!f)return Promise.reject(new Error("fullscreen not supported"));var i=e(r);if("function"!=typeof i[f.requestFn])return Promise.reject(new Error("fullscreen not supported"));if(a())return Promise.resolve();if(p())return i[f.requestFn](t);var o=".Fullscreen_requestFullscreen";return new Promise(function(e,r){jQuery(i).off(o).one(""+f.errorEvent+o+" "+f.changeEvent+o,function(t){jQuery(n).off(o),t.type===f.errorEvent?r(new Error("unknown fullscreen request error")):e()}),i[f.requestFn](t)})}function o(){var e=this;if(!f||"function"!=typeof document[f.exitFn])return Promise.reject(new TypeError("fullscreen not supported"));if(!a())return Promise.reject(new TypeError("fullscreen mode not active"));if(p())return document[f.exitFn]();var t=".Fullscreen_exitFullscreen";return new Promise(function(r,n){jQuery(document).off(t).one(""+f.errorEvent+t+" "+f.changeEvent+t,function(a){jQuery(e).off(t),a.type===f.errorEvent?n(new Error("unknown fullscreen exit error")):r()}),document[f.exitFn]()})}function s(e,t){return a()?o():i(e,t)}function u(t,r){if(f){var n=e(r);$(n).on(f.changeEvent,t)}}function l(t,r){if(f){var n=e(r);t?$(n).off(f.changeEvent,t):$(n).off(f.changeEvent)}}function c(t,r){if(f){var n=e(r);$(n).on(f.errorEvent,t)}}function d(t,r){if(f){var n=e(r);t?$(n).off(f.errorEvent,t):$(n).off(f.errorEvent)}}var f=function(){try{return Object.freeze([{isEnabled:"fullscreenEnabled",element:"fullscreenElement",requestFn:"requestFullscreen",exitFn:"exitFullscreen",changeEvent:"fullscreenchange",errorEvent:"fullscreenerror"},{isEnabled:"webkitFullscreenEnabled",element:"webkitFullscreenElement",requestFn:"webkitRequestFullscreen",exitFn:"webkitExitFullscreen",changeEvent:"webkitfullscreenchange",errorEvent:"webkitfullscreenerror"},{isEnabled:"mozFullScreenEnabled",element:"mozFullScreenElement",requestFn:"mozRequestFullScreen",exitFn:"mozCancelFullScreen",changeEvent:"mozfullscreenchange",errorEvent:"mozfullscreenerror"},{isEnabled:"msFullscreenEnabled",element:"msFullscreenElement",requestFn:"msRequestFullscreen",exitFn:"msExitFullscreen",changeEvent:"MSFullscreenChange",errorEvent:"MSFullscreenError"}].find(function(e){return e.isEnabled in document}))}catch(e){}return undefined}(),p=function(){function e(){if(null!==t)return t;if(t=!1,f)try{var e=document.exitFullscreen();e.catch(function(){}),t=e instanceof Promise}catch(e){}return t}var t=null;return e}();return Object.freeze(Object.defineProperties({},{vendor:{get:t},element:{get:r},isEnabled:{value:n},isFullscreen:{value:a},request:{value:i},exit:{value:o},toggle:{value:s},onChange:{value:u},offChange:{value:l},onError:{value:c},offError:{value:d}}))}(),_ref3=function(){function e(e){for(var t=e.cloneNode(!0),r=document.createDocumentFragment(),n=void 0;null!==(n=t.firstChild);){if(n.nodeType===Node.ELEMENT_NODE)switch(n.nodeName.toUpperCase()){case"BR":case"DIV":case"P":r.appendChild(document.createTextNode(" "))}r.appendChild(n)}return r.textContent}function t(e){if("object"!==(void 0===e?"undefined":_typeof(e))||null===e)return e;if(e instanceof String)return String(e);if(e instanceof Number)return Number(e);if(e instanceof Boolean)return Boolean(e);if("function"==typeof e.clone)return e.clone(!0);if(e.nodeType&&"function"==typeof e.cloneNode)return e.cloneNode(!0);var r=void 0;return e instanceof Array?r=new Array(e.length):e instanceof Date?r=new Date(e.getTime()):e instanceof Map?(r=new Map,e.forEach(function(e,n){return r.set(n,t(e))})):e instanceof RegExp?r=new RegExp(e):e instanceof Set?(r=new Set,e.forEach(function(e){return r.add(t(e))})):r=Object.create(Object.getPrototypeOf(e)),Object.keys(e).forEach(function(n){return r[n]=t(e[n])}),r}function r(e){
