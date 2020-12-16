@@ -1,0 +1,805 @@
+<tw-storydata name="Algorithmic Justice" startnode="1" creator="Twine" creator-version="2.3.9" ifid="01110FDD-C10E-456D-A4DE-91B7111D9FF5" zoom="1" format="SugarCube 2 (local/offline)" format-version="2.33.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"> @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+body, tw-story
+{
+  /*background-color: #191919; */
+  font-family: 'Courier Prime', monospace;  
+  font-size: 18px;
+  background-color: white; 
+  color: black;
+  max-width: 55em;
+}
+
+#ui-bar {
+  display: none;
+}
+#story {
+  margin-left: 20%;
+}
+
+a {
+color: #4cf886;
+}
+a:hover {
+color: white;
+text-decoration: none;
+border-bottom: 4px solid white;
+}
+
+button {
+  border: none;
+  background-color: #4cf886;
+  color: black;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro Screen and Story Init" tags="" position="25,25" size="200,200">&lt;&lt;nobr&gt;&gt;&lt;&lt;cacheaudio &quot;atmosphere&quot; &quot;music/atmosphere.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;tension&quot; &quot;music/tension_piano.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;citysounds&quot; &quot;music/39496__inchadney__city-traffic-2.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;sadcosmo&quot; &quot;music/109409__bruno-ph__sadness-cosmo.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;phonevibrate&quot; &quot;music/phonevibrate.wav&quot;&gt;&gt;
+
+&lt;&lt;/nobr&gt;&gt;&quot;Algorithmic Justice&quot; is an interactive fiction game. That means that the story unfolds based on decisions you make throughout the game. 
+
+For the best experience, play this in fullscreen with headphones.
+
+Thanks for playing!
+
+[[Begin]]
+
+----
+[[Credits]]
+
+
+Ignore the links below; used for debugging during drafting.
+
+[[Beginning]]
+[[Exposition]] 
+[[Phone List]] 
+[[Meet with your boss]] 
+
+
+[[Hacking Part 1]] 
+
+&lt;&lt;set $algoname to &quot;Cx86&quot;&gt;&gt;
+&lt;&lt;set $songuilt to random(0,1)&gt;&gt;
+
+&lt;&lt;silently&gt;&gt;
+initialize variables:
+&lt;&lt;set $calledJeremy to false&gt;&gt;
+&lt;&lt;set $calledJoanna to false&gt;&gt;
+&lt;&lt;set $calledMarcus to false&gt;&gt;
+&lt;&lt;set $unlockedMysteryPhoneNum to false&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Begin" tags="" position="25,250" size="100,100">&lt;&lt;audio atmosphere loop volume 0 fadeto 0.5&gt;&gt; \
+&lt;&lt;timed 0.5s t8n&gt;&gt; \
+Your name is &#39;&#39;Ava&#39;&#39;, a computer scientist and artificial intelligence researcher. 
+&lt;&lt;/timed&gt;&gt; &lt;&lt;timed 3s t8n&gt;&gt;
+You were recruited by the government as part of a secret project in response to civil unrest. The mass incarceration of the 21st century resulted in millions being unfairly jailed and punished at the mercy of a prejudiced judicial system, sparking protests across the nation. &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 5s t8n&gt;&gt;
+[[Next]]
+&lt;&lt;/timed&gt;&gt;
+
+</tw-passagedata><tw-passagedata pid="3" name="Choose Variable" tags="" position="25,575" size="100,100">$algoname will look at multiple factors of the defendant&#39;s life and behavior to determine whether they are guilty or innocent, and how serious a sentence they deserve. You&#39;ve been instructed to create an algorithm so flawless that it will display none of the biases that humans so often succumb to when handing out justice.
+
+However, to minimize computational complexity, the AI can prioritize only one key variable about the defendant when making its decision.
+
+Which variable should it use?
+
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;button &quot;Demographic&quot; &quot;Demographic&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; 
+&lt;&lt;button &quot;Place of Birth&quot; &quot;Place of Birth&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; 
+&lt;&lt;button &quot;Income Level&quot; &quot;Income Level&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; 
+&lt;&lt;/nobr&gt;&gt; 
+
+&lt;&lt;silently&gt;&gt;
+Idea: have another button that says &quot;none of the above&quot; but then lead it to another page where it randomly selects a terrible variable
+like &quot;presence of a father figure&quot;
+or &quot;facial expression&quot;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Criminal History" tags="" position="246,292" size="100,100">&lt;&lt;set $algovar to 1&gt;&gt; 
+
+You&#39;ve selected __criminal history__ as the variable your algorithm will use to determine a defendant&#39;s innocence. 
+
+[[Continue-&gt;Beginning]] </tw-passagedata><tw-passagedata pid="5" name="Demographic" tags="" position="244,411" size="100,100">&lt;&lt;set $algovar to 2&gt;&gt;
+
+You&#39;ve selected __demographic__ as the variable your algorithm will use to determine a defendant&#39;s innocence. 
+
+[[Continue-&gt;Beginning]] </tw-passagedata><tw-passagedata pid="6" name="Place of Birth" tags="" position="245,528" size="100,100">&lt;&lt;set $algovar to 3&gt;&gt;
+
+You&#39;ve selected __place of birth__ as the variable your algorithm will use to determine a defendant&#39;s innocence. 
+
+[[Continue-&gt;Beginning]] </tw-passagedata><tw-passagedata pid="7" name="Income Level" tags="" position="243,644" size="100,100">&lt;&lt;set $algovar to 4&gt;&gt;
+
+You&#39;ve selected __income level__ as the variable your algorithm will use to determine a defendant&#39;s innocence. 
+
+[[Continue-&gt;Beginning]] </tw-passagedata><tw-passagedata pid="8" name="Beginning" tags="" position="425,275" size="100,100">&lt;&lt;type 40ms start 1s&gt;&gt; 
+	Date: December 15, 2050
+	Coordinates: [38.895, -77.0366]
+	Weather: 35 degrees Fahrenheit
+&lt;&lt;/type&gt;&gt;
+&lt;&lt;timed 5s t8n&gt;&gt;
+	[[Next-&gt;Exposition]]
+&lt;&lt;/timed&gt;&gt;
+
+</tw-passagedata><tw-passagedata pid="9" name="Phone List" tags="" position="760,318" size="200,200">
+!&#39;&#39;Who will you visit?&#39;&#39;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;audio atmosphere stop&gt;&gt;
+&lt;&lt;audio tension loop volume 0 fadeto 0.25&gt;&gt; &lt;&lt;/nobr&gt;&gt;
+
+&lt;&lt;if $calledJoanna is false&gt;&gt;&#39;&#39;[[Joanna]]&#39;&#39; &lt;&lt;elseif $calledJoanna is true&gt;&gt;&#39;&#39;Joanna&#39;&#39;&lt;&lt;/if&gt;&gt;
+Your old colleague. She worked with you on Project $algoname 20 years ago. After the team disbanded, she found work as an assistant AI researcher at a local university.
+
+&lt;&lt;if $calledMarcus is false&gt;&gt;&#39;&#39;[[Marcus]]&#39;&#39; &lt;&lt;elseif $calledMarcus is true&gt;&gt;&#39;&#39;Marcus&#39;&#39;&lt;&lt;/if&gt;&gt;
+A guy you know who works in the upper ranks in D.C. One of the few people who knows about your involvement with the development of $algoname. He&#39;s been known to be willing to pull some strings when asked.
+
+
+&#39;&#39;[[???]]&#39;&#39;
+You haven&#39;t called this number in a long time. 
+</tw-passagedata><tw-passagedata pid="10" name="Joanna" tags="" position="575,1625" size="200,100">You knock on the door, and a voice rings out: &quot;Come in!&quot;
+A woman is sitting at a giant desk with 5 monitors floating around it. She’s somehow eating a burger without the use of either of her hands as she furiously types away at her glowing keyboard. 
+
+&quot;Office hours don&#39;t start for another 30 minutes, but if it&#39;s an urgent question —&quot;
+
+She turns in her swivel chair to face you and the sandwich falls to the floor. Her stunned face makes you smile.
+
+&quot;Hello Professor,&quot; you joke, but it&#39;s halfhearted. &quot;Any major bugs in the program recently?&quot;
+
+&quot;The Algorithm doesn&#39;t make mistakes, Ava,&quot; She responds immediately, in a mechanical tone. You nod. After doing a quick sweep to make sure the corridor outside is empty, you lock the office door and activate the radio frequency jammer in your pocket.
+
+&quot;I&#39;m of the same opinion,&quot; she says in the same monotone. She surreptitiously jerks her thumb toward the underside of the whiteboard. 
+
+[[Deactivate the bug]]
+[[Leave the bug activated]]</tw-passagedata><tw-passagedata pid="11" name="Hand the file back" tags="" position="1475,275" size="100,100">You slide the file back to him.
+
+&quot;That&#39;s not what I want,&quot; you say. &quot;I don&#39;t want your shady government backdoors. I&#39;m not switching places with him, but I&#39;m not leaving him to rot in jail. There&#39;s got to be another way&quot;
+
+Marcus looks exasperated. &quot;If there is, you won&#39;t find it through me. How do you still have an ounce of idealism in you? The execution is in 3 days. Some situations are too desperate to wait for a better answer.&quot;
+
+[[Take the file-&gt;Take the file]] 
+[[Get up and leave the cafe-&gt;Phone List]] </tw-passagedata><tw-passagedata pid="12" name="Take the file" tags="" position="1475,432" size="100,100">Without a word you tuck the file into your coat and walk out of the room.
+
+[[Next-&gt;2 Days Before the Execution]] </tw-passagedata><tw-passagedata pid="13" name="Jeremy" tags="" position="888,127" size="200,100">&lt;&lt;set $calledJeremy to true&gt;&gt;
+[ @NOTE: remove this in final draft, used for debugging ]
+&lt;&lt;if $songuilt is 0&gt;&gt;
+Jeremy is innocent.
+&lt;&lt;elseif $songuilt is 1&gt;&gt;
+Jeremy is guilty.
+&lt;&lt;/if&gt;&gt;
+
+You almost dial Jeremy&#39;s number before remembering that all his possessions were confiscated after the trial.
+
+Guess you&#39;ll have to wait until there&#39;s another way to contact him.
+
+[[Back-&gt;Phone List]] </tw-passagedata><tw-passagedata pid="14" name="Leave the Visitor&#39;s Center" tags="" position="446,881" size="100,100">
+You stand on the busy streets of the city, looking off toward the Capital. The tick of every second brings you closer to the decisions you know might destroy you.
+
+It&#39;s time for you to choose. 
+
+How will you save your son with odds like these? You can&#39;t do it alone.
+
+It&#39;s time to call someone for help.
+
+[[Power on your phone-&gt;Phone List]] </tw-passagedata><tw-passagedata pid="15" name="Marcus" tags="" position="1174,333" size="200,100">&lt;&lt;set $calledMarcus to true&gt;&gt;
+
+You&#39;re sitting at a cafe watching the pigeons peck at crumbs on the sidewalk when someone drops their napkin straight into your cup of coffee.
+
+&quot;Oops,&quot; a voice chuckles in your ear.
+
+Marcus gracefully slides into the seat across from you. His gray suit and tie are immaculate. 
+
+You resist the urge to grimace, trying to figure out his game. It was always a risk asking for favors from people who knew his true involvement with $algoname. You needed to stay on his good side.
+
+[ @TODO: Add more dialogue here ]
+
+Your conversation is safely folded into the hubbub from pedestrians and streetgoers nearby.
+
+Marcus pulls an innocuous-looking manila-colored file out of his briefcase. He hesitates almost imperceptibly before sliding it across the wire-wrought table toward you.
+
+You glance at him quizzically, then open it. There&#39;s a stack of forms inside, labeled &quot;EXCEPTION REPORT&quot;.
+
+&quot;You could switch places with him.&quot;
+
+You look up in shock. 
+
+&quot;Are you serious? The system allows for that?&quot; you ask, incredulous. You had never known the government to show such leniency with its criminal system.
+
+&quot;Well...no. But...that paperwork could make it happen. If that&#39;s what you wanted.&quot; He doesn&#39;t meet your eyes.
+
+&quot;What about the charges?&quot; you press. &quot;Will the execution still proceed?&quot; Doubt brews in your gut, but desperation is speaking louder than anything.
+
+He looks genuinely nervous for once. &quot;I don&#39;t know. There are ways...I don&#39;t know. But I do know how much you care about your son. I get it.&quot;
+
+You rifle through the forms. Sixty jargon-filled pages of paper could set your boy free. But even if this works, what are the chances you&#39;ll actually be able to make it out of prison in time?
+
+[[Take the file-&gt;Take the file]] 
+[[Hand the file back-&gt;Hand the file back]]
+</tw-passagedata><tw-passagedata pid="16" name="???" tags="" position="1280,556" size="200,100">&lt;&lt;type 40ms start 0.5s&gt;&gt;
+	You dial &quot;???&quot;.
+&lt;&lt;/type&gt;&gt;
+&lt;&lt;if $unlockedMysteryPhoneNum is false&gt;&gt;
+&lt;&lt;timed 2s t8n&gt;&gt;
+After a few rings, you hear someone pick up on the other end. 
+
+&quot;...&quot;
+
+&quot;Hello?&quot; you ask, hesitantly.
+
+&quot;...-&quot; after a few seconds of silence, the line goes dead.
+
+[[Back-&gt;Phone List]] 
+&lt;&lt;/timed&gt;&gt;
+&lt;&lt;elseif $unlockedMysteryPhoneNum is true&gt;&gt;
+You unlocked &quot;???&quot;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="2 Days Before the Execution" tags="" position="1779,286" size="200,200">&lt;&lt;type 40ms start 1s&gt;&gt;
+	2 Days Before the Execution
+&lt;&lt;/type&gt;&gt;
+&lt;&lt;type 40ms start 1s&gt;&gt;
+	[[Next-&gt;Marcus Day Two Start]]
+&lt;&lt;/type&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="Marcus Day Two Start" tags="" position="2206,356" size="100,100">//Thunk.//
+
+You wake up and your nose immediately fills with the stench of sweat, urine, and fear. It&#39;s so stifling that you almost wish you were unconscious again.
+
+It had been easier than you&#39;d expected to switch places with him. With the help of Marcus, Jeremy had been escorted out last night. Hours later, you were thrown in unceremoniously on some trumped-up charges that you fabricated. 
+
+It didn&#39;t make up for anything, but at least he was safe.
+
+Now this was your problem alone.
+
+You look around the dank cell. It&#39;s barren save for a lanky teenager seated in the corner opposite from you. He looks relaxed, casually lobbing a ball repeatedly against the concrete cell wall with a soft //thunk//. He doesn&#39;t give any sign of noticing that you&#39;re conscious.
+
+[[Ask him for his name-&gt;Talk to cellmate]]
+[[Ignore him-&gt;Ignore cellmate]]</tw-passagedata><tw-passagedata pid="19" name="Talk to cellmate" tags="" position="2092,509" size="100,100">
+&quot;Hello,&quot; you speak for the first time in 12 hours, your voice gravelly.
+
+The kid doesn&#39;t stop playing tennis with the wall but turns and gives you the barest glance.
+
+
+[[Cellmate asks questions]] </tw-passagedata><tw-passagedata pid="20" name="Ignore cellmate" tags="" position="2335,507" size="100,100">
+
+
+[[Cellmate asks questions]] </tw-passagedata><tw-passagedata pid="21" name="Lie to cellmate" tags="" position="2094,810" size="100,100">&lt;-- Set lie variable to 1 --&gt;
+
+
+Convo gets on the topic of the AI anyway and you learn of cellmate&#39;s background story and how the algorithm took his mother. 
+
+It hits especially hard knowing how your son had to grow up without a mother.
+
+
+&quot;But what do I know? The Algorithm is flawless, after all. They say it&#39;s been trained on thousands of decisions of the highest ethical and moral complexity. It doesn&#39;t make mistakes, and it&#39;s sure not as biased as we are.&quot;
+
+[[&quot;That&#39;s right&quot;-&gt;Agree that Algo is not biased]]
+[[&quot;Well...&quot;-&gt;Disagree And Say Algo is biased]]</tw-passagedata><tw-passagedata pid="22" name="Tell the truth to cellmate" tags="" position="2297,809" size="100,100">&lt;-- Set lie variable to 0 --&gt;
+
+Convo gets on the topic of the AI anyway and you learn of cellmate&#39;s background story and how the algorithm took his mother. 
+
+It hits especially hard knowing how your son had to grow up without a mother.
+
+
+&quot;But what do I know? The Algorithm is flawless, after all. They say it&#39;s been trained on thousands of decisions of the highest ethical and moral complexity. It doesn&#39;t make mistakes, and it&#39;s sure not as biased as we are.&quot;
+
+[[&quot;That&#39;s right&quot;-&gt;Agree that Algo is not biased]]
+[[&quot;Well...&quot;-&gt;Disagree And Say Algo is biased]]</tw-passagedata><tw-passagedata pid="23" name="Cellmate asks questions" tags="" position="2209,663" size="100,100">&quot;So why are //you// in here?&quot; he asks, looking you up and down a bit suspiciously.
+
+
+&quot;I&#39;m here because...
+
+[[Lie-&gt;Lie to cellmate]]
+[[Tell the truth-&gt;Tell the truth to cellmate]]</tw-passagedata><tw-passagedata pid="24" name="Agree that Algo is not biased" tags="" position="2083,964" size="100,100">[[Cellmate Asks How You Know]] </tw-passagedata><tw-passagedata pid="25" name="Disagree And Say Algo is biased" tags="" position="2257,964" size="100,100">[[Cellmate Asks How You Know]] </tw-passagedata><tw-passagedata pid="26" name="Cellmate Asks How You Know" tags="" position="2208,1104" size="100,100">&quot;How do you know?&quot; he asks, looking you up and down a bit suspiciously now.
+
+If lied:
+[[Come clean-&gt;Tell the truth 2]]
+[[Lie-&gt;Lie again 2]]
+
+If not lied:
+[[Tell the whole truth]]
+[[Lie-&gt;Lie again 2]]
+
+</tw-passagedata><tw-passagedata pid="27" name="Tell the truth 2" tags="" position="2058,1253" size="100,100">
+[[Cellmate Discovers Who You Are]] </tw-passagedata><tw-passagedata pid="28" name="Lie again 2" tags="" position="2208,1253" size="100,100">[[Cellmate Discovers Who You Are]] </tw-passagedata><tw-passagedata pid="29" name="Tell the whole truth" tags="" position="2358,1253" size="100,100">[[Cellmate Discovers Who You Are]] </tw-passagedata><tw-passagedata pid="30" name="Cellmate Discovers Who You Are" tags="" position="2217,1411" size="100,100">
+
+incites a riot
+
+
+You need to escape. You look around the warden&#39;s office. What do you grab?
+
+[[Hammer-&gt;Hammer:Wrong Tool 1]]
+[[Megaphone-&gt;Megaphone:Right Tool 1]]
+[[Rope-&gt;Rope:Right Tool 2]]</tw-passagedata><tw-passagedata pid="31" name="Hammer:Wrong Tool 1" tags="" position="2067,1561" size="100,100">Double-click this passage to edit it.
+
+[[Fail and die]] </tw-passagedata><tw-passagedata pid="32" name="Megaphone:Right Tool 1" tags="" position="2216,1562" size="100,100">Work together with the prisoners to free everyone
+
+Put a timer on this page, you have to figure out the right thing to say.
+
+[[Live and continue to fight]]
+[[Fail and die]]</tw-passagedata><tw-passagedata pid="33" name="Rope:Right Tool 2" tags="" position="2367,1561" size="100,100">Leave the prison by rappelling down from a window, leaving your fellow inmates behind to the mercy of your algorithm but guaranteeing that your son will have a father.
+
+Just before you let go of the ledge, a thin hand grabs your arm. You try to shake it free, but it&#39;s a surprisingly strong grip. You look up to see your cellmate, the teenager whose name you never bothered to ask for. His bottom lip quivers but his eyes are resolute, and they stare at you with a look of utmost despair.
+
+&quot;It&#39;s not just your son, or just my mom. Me, everyone in this prison, in every prison in this country, is locked up because of your Algorithm. We are victims in a box, and you have the key. Are you really leaving us all to rot here?&quot;
+
+
+[[Ending: Live but abandon everyone]]</tw-passagedata><tw-passagedata pid="34" name="Live and continue to fight" tags="" position="2082,1738" size="100,100">
+You stay and fight for long-term reform somehow...with a day left to live if you fail.
+
+[[Next-&gt;1 Day Until the Execution]]</tw-passagedata><tw-passagedata pid="35" name="Fail and die" tags="" position="2300,1744" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="36" name="Ending: Live but abandon everyone" tags="" position="2571,1556" size="200,200">&lt;&lt;type 40ms start 1s&gt;&gt;
+	Ending 1.
+	You and your son escape your fates, but the millions of innocent lives convicted by $algoname still hang in the balance. 
+	&lt;&lt;if $songuilt is 0&gt;&gt;You later find out that Jeremy really was innocent. But consumed by survivor&#39;s guilt, you never talk to your son again.
+	&lt;&lt;elseif $songuilt is 1&gt;&gt;You later find out that Jeremy was actually guilty. Consumed by guilt and betrayal, you never talk to your son again.
+	&lt;&lt;/if&gt;&gt;
+&lt;&lt;/type&gt;&gt;
+&lt;&lt;timed 3s t8n&gt;&gt;
+	[[Credits-&gt;Credits]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="1 Day Until the Execution" tags="" position="2084,1891" size="200,200">&lt;&lt;type 40ms start 1s&gt;&gt;
+	1 Day Before the Execution
+&lt;&lt;/type&gt;&gt;
+&lt;&lt;type 40ms start 1s&gt;&gt;
+	[[Next-&gt;Day Three Start]]
+&lt;&lt;/type&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="Day Three Start" tags="" position="1873,2155" size="100,100">
+And continue this with the plot where you go public with the news that the algorithm is flawed. See how people react.
+
+[[&quot;Back to menu because I haven&#39;t finished writing this part :)&quot;-&gt;Phone List]]</tw-passagedata><tw-passagedata pid="39" name="Say No to Joanna" tags="" position="1000,800" size="100,100">&quot;No. I&#39;ll find another way.&quot;
+
+She cocks her head and looks at you as if seeing you for the first time. 
+
+&quot;I know I&#39;m overstepping again. But you don&#39;t have another plan. The only way you&#39;ve had ever since you just started is to keep your head down and do what you&#39;re told. But that&#39;s not what your kid needs right now.&quot;
+
+It&#39;s what you already know is true...but you won&#39;t be any use to anyone, much less Jeremy, if you fail. The fear keeps your lips sealed firmly shut. The clock on the rear wall ticks softly - your five minutes of safe conversation are nearly up.
+
+[[&quot;Ok.&quot;-&gt;Go public]]
+[[Leave Joanna&#39;s Office-&gt;Phone List]] </tw-passagedata><tw-passagedata pid="40" name="2 Days Before" tags="" position="600,2275" size="100,100">&lt;&lt;type 40ms start 1s&gt;&gt;
+	2 Days Before the Execution
+&lt;&lt;/type&gt;&gt;
+&lt;&lt;type 40ms start 1s&gt;&gt;
+	[[Next-&gt;Joanna Day Two Start]]
+&lt;&lt;/type&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="Credits" tags="" position="301,38" size="100,100">&#39;&#39;Credits&#39;&#39;
+
+Thank you for being here!
+
+Created with Twine and SugarCube 2.1
+Game by Himaja Motheram
+Course: Writing 220 Fall 2020
+
+Music: [[https://freesound.org/people/ERH/sounds/33987/]]
+
+
+[[Back to Starting Screen-&gt;Intro Screen and Story Init]] </tw-passagedata><tw-passagedata pid="42" name="Next" tags="" position="25,425" size="100,100">&lt;&lt;timed 0.5s t8n&gt;&gt;
+In the modern cities of America, the government&#39;s top priority is to scrap this primitive way of serving justice and aspire to a higher moral and technological standard. 
+&lt;&lt;/timed&gt;&gt;&lt;&lt;timed 3s t8n&gt;&gt;
+You work as part of a team of programmers, lawyers, and philosophers to develop an Artificial Intelligence called $algoname that can be used in place of human judges in a court of law to hand down sentences. 
+&lt;&lt;/timed&gt;&gt;&lt;&lt;timed 5s t8n&gt;&gt;
+Since its first implementation, $algoname has become so skilled that it has a less than 0.005% error rate according to experts. Because  computers are less prejudiced than humans. &lt;&lt;/timed&gt;&gt; &lt;&lt;timed 7s t8n&gt;&gt;
+...or are they?
+[[Next-&gt;Choose Variable]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="Exposition" tags="" position="425,425" size="100,100">&lt;&lt;audio citysounds loop volume 0.5 &gt;&gt;
+“Welp,” you say, looking down at your cup, “That grumpy barista gave me a Cruella de Vil this time. Was I too loud in there?”
+
+The black-haired boy beside you grins as you both leave the tiny coffee shop. The foamy white face of Scar from The Lion King floats on top of his latte. “You practically screamed. Everyone in there thought you were being murdered by me or something. Was my grade in math really that shocking?”
+
+You sigh melodramatically, the breath coming out in a billowy cloud in the wintry air. “I just can’t believe that a human being with my DNA hates math. Truly a tragedy. We better behave ourselves or we’ll only get villains in our coffee for the rest of the year.&quot;
+
+“The villains are the more interesting characters anyway,” your son quips, wrapping his scarf tighter around his neck.
+
+You know that in the wrong room, near the wrong cameras, a statement like that could get him in trouble. Or more accurately, in trouble for having the potential to be in trouble. Your stomach tightens involuntary with fear.
+
+It&#39;s a quiet, snowy morning in Washington, D.C. Despite the cold, the sidewalks are packed with city goers trying to get to work. The sun is nowhere in sight, but the warm glow of street lamps overhead is enough to light the way to the bus station. 
+
+You plop down onto an open bench underneath the hood of the station and doublecheck the transportation schedule on your tiny Comms Screen. A little notification pops up for an incoming message. It’s encrypted.
+
+&lt;&lt;linkappend &quot;Open the Message&quot; t8n&gt;&gt;
+A tiny whirring sound starts humming.
+&lt;&lt;type 40ms start 2s&gt;&gt;//verifying identity….identity verification complete//&lt;&lt;/type&gt;&gt;
+&lt;&lt;timed 5s t8n&gt;&gt;From: *****
+Subject: Prog Crime Project Phase 2
+Message: Good work on the last update. Fed Protective Service reports 15% less crime than usual for this time of year. Something to be proud of. See you all at the lab today -- last stretch before the Holidays! &lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 7s t8n&gt;&gt;You turn the Comms off. &lt;&lt;/timed&gt;&gt; \
+&lt;&lt;/linkappend&gt;&gt;
+
+Jeremy’s eyes are unfocused as he stares at the bustling crowds. His glasses are fogged up with steam.
+
+&quot;Hey,&quot; you nudge his elbow with yours. 
+
+[[&quot;What&#39;s on your mind?&quot;]]
+[[&quot;How&#39;s the coffee?&quot;]]
+</tw-passagedata><tw-passagedata pid="44" name="&quot;What&#39;s on your mind?&quot;" tags="" position="525,550" size="100,100">“What’s on your mind?”
+He shrugs. “Another one of my classmates got arrested yesterday.”
+You tense.
+“I know the pre-crime tests are to make the city safer, but...I know some of these guys. A lot of them would never hurt a flea.”
+“It’s like they’re being picked off, one by one...and they all look the same. Maybe the tests aren&#39;t-” 
+Before he can say anything else you clap a hand over his mouth instinctively. 
+“Not here.” 
+He shoves your hand away with a grimace. “I don’t get why I have to be so hush-hush about it. What’s the worst they can do? And who is they anyway?”
+You know the answers. And you also know that they would give him nightmares. There’s that familiar twinge of guilt, the same twinge you feel almost every day that you lie to your son about what you do for a living. 
+But at least he was safe, safer than you were growing up. In just 10 years since Project ${algoname} had been implemented, crime in the most dangerous parts of the city had gone down astronomically. What could be more effective than detecting crime before it even happened? 
+
+[[&quot;...&quot;]]</tw-passagedata><tw-passagedata pid="45" name="&quot;How&#39;s the coffee?&quot;" tags="" position="388,551" size="100,100">//“How’s the coffee?”// 
+
+He takes a sip of his overpriced brew and makes a sound of delight. “The milk ratio is just right.” 
+
+In that moment, there are a few things you know that he doesn’t.
+
+You know that 4 tiny input feeds hidden in the screen next to you have just picked up everything he said and did, down to the scrunched-up expression on his face. You know that these feeds operate on a 24/7 basis in every public transportation vehicle and public space in the city. You know that on a remote server in a data center lying at the bottom of the ocean, a computer program just &lt;&lt;linkappend &quot;thought:&quot; t8n&gt;&gt;
+
+JEREMY FISHER 
+PREFS.BEVERAGES[“Coffee”] = 
+{“MED MILK”, “NONSWEET”}
+ PRE-CRIME SCORE: &lt;&lt;type 20ms start 2s&gt;&gt;Re-calculating... &lt;&lt;/type&gt;&gt;
+&lt;&lt;/linkappend&gt;&gt; 
+
+And you know exactly how this program thinks, because you helped write it.
+
+“Hang on, did we even order? I didn’t notice until now, but for some reason they always give me this exact drink even when you don’t say anything to them. And we’ve never been to that cafe before.”
+
+Now it was your turn to shrug in a hopefully convincing “don’t ask me” gesture.
+
+“I don’t know, maybe you look like a milk-coffee dude. ” 
+
+He gives you a sharp glance. “You think they analyze that stuff?” 
+
+You swear under your breath and don’t say anything more in the hopes that he drops it. There’s that familiar twinge of guilt, the same twinge you feel almost every day that you lie to your son about what you do for a living. 
+
+The price of safety is privacy, or so your boss has told you countless times. 9 days out of 10, you’ll take that trade-off. 
+
+[[&quot;...&quot;]]</tw-passagedata><tw-passagedata pid="46" name="&quot;...&quot;" tags="" position="417,692" size="100,100">At your silence he just shakes his head and digs his hands into his pockets.
+
+Your bus pulls up first, on schedule. You turn to give Jeremy your obligatory mom fist-bump, but he won&#39;t look at you.
+
+The bus is more crowded than usual as you make your way to a seat. Sitting alone with his hood up and his long black coat, your kid looks like a tiny grim reaper. You hope his bus comes soon.
+
+And then: through the dusty window, you see a dull gray metallic arm clamp onto his left shoulder from behind. Alarm bells ring in your head. There are startled shouts from the crowd.
+
+Jeremy turns and screams. Handcuffs appear on his wrists.
+
+You try to stand, jostling the passengers around you to try and make it to the exit. It’s like wading through a brick wall. 
+
+He slumps over and more robots surround him. 
+
+The doors of the bus begin to close.
+
+You scream his name and almost claw the driver’s eyes out with panic, but arms hold you back.  
+
+Your Comms unit buzzes with a notification. It’s another email, but you barely register it. 
+
+From: US FPS
+Subject: Precrime Testing Assessment
+Message: 
+DEAR RELATION OF Jeremy Fisher,
+THIS IS AN AUTOMATED MESSAGE FROM THE UNITED STATES FEDERAL PROTECTIVE SERVICE… TO INFORM YOU THAT Jeremy Fisher HAS BEEN PROCESSED TO HAVE A PRE-CRIME SCORE OF 0.9889. AS SUCH, THE INDIVIDUAL HAS BEEN AUTO-DETAINED AND NEUTRALIZATION PROCEDURES WILL FOLLOW. PLEASE CALL YOUR LOCAL DETENTION CENTER FOR CRUCIAL INFORMATION ON LAST VISITATION AND FAMILIAL SUPPORT RESOURCES.
+
+When you catch another glimpse of the station through the window, the crowd has evaporated. An empty coffee cup lays overturned on the spot where your kid stood minutes earlier, the liquid slowly staining the snow black. 
+
+[[Continue-&gt;3 Days Before]] 
+</tw-passagedata><tw-passagedata pid="47" name="Work" tags="" position="175,925" size="100,100">The sound of heavy-handed typing, normally so soothing, now feels like an assault on your ears. 
+
+You don&#39;t have the kind of job that affords days off. 
+
+//Even when your child has just been arrested for pre-crime and you couldn&#39;t save him and God now you know how all those parents felt and how the Hell did it get this bad --//
+
+&quot;Ava? Did you hear me?&quot;
+
+You blink. Your colleagues are all staring at you with expectant expressions.
+
+&quot;I was asking for your recap on the impact of Embedded Surveillance phase 2?&quot; your boss taps his pencil against his laptop. To anyone peering in he would look like a middle school computer science teacher, with his long white lab coat and shirt that reads //&quot;I&#39;m code-blooded!&quot;// Not a person here in the $algoname Artificial Intelligence Lab could even tell the difference from a pipette and a syringe, but they really took the &quot;Lab&quot; part to heart. 
+
+&quot;Oh right, sorry,&quot; you begin. Your tongue is dry as sandpaper. &quot;To refresh everyone&#39;s memory, ES Phase 2 was the rollout of data gathering networks in public transportation stations. It has been...remarkably impactful in expanding the size of $algoname &#39;s training datasets. Detailed accuracy metrics are not available yet, but we expect to hear back from the Ethics committee in a week.&quot;
+
+At the mention of the committee, faces around the room go sour with distaste. Murmurs start. 
+
+//Not much of a committee, is it...//
+//...Her only real contribution...//
+//Can&#39;t believe she left...this is a joke//
+
+Your boss smiles and claps his hands to quiet the room. He stands for dramatic effect.
+
+&quot;Prognostic criminal detection was controversial for many years worldwide, but since its implementation it has met all our milestones for crime reduction in urban areas. The Administration has commended our team specifically for our research and contributions to $algoname. Great work, everyone!&quot;
+
+You stand up shakily to head back to your desk.
+
+&quot;Ava!&quot; your boss motions you over. &quot;There&#39;s something I&#39;d like to discuss with you.&quot; 
+
+At that exact moment, your Comms unit starts buzzing insistently. It&#39;s an &lt;&lt;linkappend &quot;incoming call from...&quot; t8n&gt;&gt;a number that you don&#39;t recognize.&lt;&lt;/linkappend&gt;&gt;
+
+[[Take the call]]
+[[Meet with your boss]]</tw-passagedata><tw-passagedata pid="48" name="Take the call" tags="" position="100,1075" size="100,100">&lt;&lt;audio phonevibrate loop play&gt;&gt;
+
+
+He has his &quot;friendly nerdy boss request&quot; face on, but you know from experience how quickly things can get ugly if you refuse.
+
+[[Take the call anyway]]
+[[Meet with your boss]] </tw-passagedata><tw-passagedata pid="49" name="Meet with your boss" tags="" position="250,1075" size="100,100">&quot;Have you had any luck finding a new developer?&quot; he asks. Up close you can see faint bags under his eyes. 
+
+You shake your head. &quot;We&#39;ve had some promising candidates but they usually get scared away at the third interview. Not many are willing to sign the contract once they see the NDA.&quot;
+
+He makes a sound of frustration. &quot;We need her back. She made a lot of noise about morals but she was one of the best. We don&#39;t have time to train someone new.&quot;
+
+&quot;I learned a lot from her,&quot; you agree. 
+
+&quot;Say, didn&#39;t you mention that you two used to go to college together?&quot;
+
+You nod, apprehensive. He hands you a small black device. It has a tiny red button on the side. 
+
+&quot;She&#39;s been pretty careful around the cameras. I can&#39;t find anything on her. Think you could, y&#39;know...gather some intel for me?&quot;
+
+[[???-&gt;Boss asks you to blackmail Joanna]]
+</tw-passagedata><tw-passagedata pid="50" name="3 Days Before" tags="" position="275,800" size="100,100">&lt;&lt;type 40ms start 1s&gt;&gt; &lt;&lt;audio atmosphere stop&gt;&gt; 
+	3 Days Before the Execution
+&lt;&lt;/type&gt;&gt;
+&lt;&lt;timed 3s t8n&gt;&gt;
+	[[Next-&gt;Work]]
+&lt;&lt;/timed&gt;&gt;
+
+</tw-passagedata><tw-passagedata pid="51" name="Epilogue" tags="" position="1000,1525" size="100,100">&lt;&lt;audio sadcosmo loop volume 0 fadeto 0.5&gt;&gt;
+</tw-passagedata><tw-passagedata pid="52" name="&quot;Yup&quot;" tags="" position="500,1950" size="100,100">She smirks. &quot;Thanks for being honest. Well, I&#39;m flattered that they want me back.&quot; 
+
+Her face darkens abruptly. &quot;But there&#39;s no way in hell I&#39;m returning. Joining that lab is the single greatest regret of my goddamn life.&quot;
+
+
+“Don’t you see? The problem isn’t whether $algoname is ‘wrong’ or ‘right’. The problem is that we are taking its decisions as the wrong or the right. We have designated it as our one pure moral voice, separate from our human biases... when really it just has the prejudice of 100 years of humans combined in one brain.” 
+
+It&#39;s the safe ideas that are the most dangerous. It would be safe to sit back, to say that this is just the system, and the systems are to be respected. But how could you stand by systems that didn&#39;t protect the ones you loved?
+
+
+</tw-passagedata><tw-passagedata pid="53" name="&quot;Not exactly&quot;" tags="" position="725,1950" size="100,100">She smirks. &quot;You&#39;re lying. Well, I&#39;m flattered that they want me back.&quot; 
+
+Her face abruptly turns serious. &quot;But there&#39;s no way in hell I&#39;m returning. Working at that lab is the single greatest regret of my goddamn life.&quot;
+
+</tw-passagedata><tw-passagedata pid="54" name="Boss asks you to blackmail Joanna" tags="" position="250,1200" size="100,100">&quot;I&#39;m just saying it might help if you ask her a few questions, y&#39;know, about her...beliefs. And get it on tape.&quot;
+
+[[Okay, I&#39;ll try]]
+[[No, that&#39;s blackmail.]]</tw-passagedata><tw-passagedata pid="55" name="Okay, I&#39;ll try" tags="" position="150,1350" size="100,100">//&quot;Sure. I can pay her a visit.&quot;//
+
+His goofy smile widens, but looks no less practiced than it did before. 
+
+The recording device still sits in your palm.
+
+&quot;Just take that along and see what happens in your conversation.I&#39;ll email you her location. Looks like she found work at the university, of all the useless places,&quot; he snorts derisively and leaves the meeting room.
+
+[[Visit the location]]
+[[Call Jeremy]]</tw-passagedata><tw-passagedata pid="56" name="No, that&#39;s blackmail." tags="" position="300,1350" size="100,100">//&quot;I&#39;m not sure that&#39;s the best course of action here. To be honest, it sounds a bit like...blackmail.&quot;//
+
+His goofy smile remains plastered on his face, but the edges of his eyes tighten. Years of practice from negotiating with lawmakers, no doubt. 
+
+The recording device still sits in your palm.
+
+&quot;Here, just take that along...and see what happens in your conversation. Okay?&quot;
+
+You clearly don&#39;t have a choice, so you tuck the mic in your pocket. 
+
+&quot;I&#39;ll email you her location. Looks like she found work at the university, of all the useless places,&quot; he snorts derisively and leaves the meeting room.
+
+[[Visit the location-&gt;Joanna]]
+[[Call Jeremy]]</tw-passagedata><tw-passagedata pid="57" name="Visit the location" tags="" position="150,1500" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="58" name="Call Jeremy" tags="" position="300,1500" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="59" name="Deactivate the bug" tags="" position="500,1775" size="100,100">You feel under the metal pane until you find the bug, and deactivate it instantly. A sense of unease passes through your mind at what you&#39;re doing. 
+
+&quot;Is the jammer enough?&quot; she asks worriedly.
+
+&quot;They haven&#39;t been able to override this model yet. It should buy us at least 5 minutes,&quot; you reply.
+
+&quot;Well, we won&#39;t need the whole 5. I already have an answer: I can&#39;t help you.&quot;
+
+“How did you--”
+
+“I’ve been doing some monitoring of my own.”
+
+You raise your eyebrows. &quot;Doesn&#39;t that go against your principles?&quot;
+
+&quot;You&#39;re one to talk. They still hate my guts over there?&quot;
+
+[[&quot;Yup&quot;]]
+[[&quot;Not exactly&quot;]]</tw-passagedata><tw-passagedata pid="60" name="Leave the bug activated" tags="" position="725,1775" size="100,100">You feel under the metal pane until you find the bug, and pretend to deactivate it. When you stand up again, Joanna seems convinced. A sense of unease passes through your mind at what you&#39;re doing. 
+
+&quot;Is the jammer enough?&quot; she asks worriedly.
+
+&quot;They haven&#39;t been able to override this model yet. It should buy us at least 5 minutes,&quot; you reply.
+
+&quot;Well, we won&#39;t need the whole 5. I already have an answer: I can&#39;t help you.&quot;
+
+“How did you--”
+
+“I’ve been doing some monitoring of my own.”
+
+You raise your eyebrows. &quot;Doesn&#39;t that go against your principles?&quot;
+
+&quot;You&#39;re one to talk. They still hate my guts over there?&quot;
+
+[[&quot;Yup&quot;]]
+[[&quot;Not exactly&quot;]]</tw-passagedata><tw-passagedata pid="61" name="Take the call anyway" tags="" position="25,1200" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="62" name="Why did you leave?" tags="" position="475,2100" size="100,100">She looks at you as if you have the IQ of a plastic bag.
+
+&quot;I mean, I know why. But maybe we could&#39;ve changed it from the inside.&quot;</tw-passagedata><tw-passagedata pid="63" name="Hacking Part 1" tags="" position="950,1750" size="100,100">&quot;Are you in?&quot; Joanna whispers through your headset. 
+
+&quot;Hang on it didn&#39;t eat the password for some reason,&quot; you murmur.
+
+&quot;Did you type it in correctly? Try again. And hurry.&quot;
+
+&lt;&lt;linkappend &quot;Type in the password&quot; t8n&gt;&gt;&lt;&lt;textarea &quot;$password&quot; &quot;&quot; autofocus&gt;&gt;
+&lt;&lt;linkappend &quot;Enter&quot; t8n&gt;&gt;
+	&lt;&lt;type 40ms start 1s&gt;&gt;Root access granted.&lt;&lt;/type&gt;&gt;
+	&lt;&lt;timed 2s t8n&gt;&gt;[[What next?]]&lt;&lt;/timed&gt;&gt;
+&lt;&lt;/linkappend&gt;&gt;
+&lt;&lt;/linkappend&gt;&gt;
+
+</tw-passagedata><tw-passagedata pid="64" name="Questioning" tags="" position="1025,2150" size="100,100">&quot;Did you have any accomplices? If you cooperate and tell us, we can get you out, scot free.&quot;
+
+You glare at him, unmoving.
+
+He clears his throat and lowers his voice. &quot;...and we can get your kid out, too. He doesn&#39;t have much time left...and now neither do you. It&#39;s your choice.&quot;
+
+[[&quot;It was just me.&quot;]]
+[[&quot;There was someone else...&quot;]]</tw-passagedata><tw-passagedata pid="65" name="1 Day Before" tags="" position="1150,2000" size="100,100">&lt;&lt;type 40ms start 1s&gt;&gt;
+	1 Day Before the Execution
+&lt;&lt;/type&gt;&gt;
+&lt;&lt;type 40ms start 1s&gt;&gt;
+	[[Next-&gt;Questioning]]
+&lt;&lt;/type&gt;&gt;</tw-passagedata><tw-passagedata pid="66" name="&quot;How do we fix it?&quot;" tags="" position="925,2025" size="100,100">//&quot;How do we fix it?&quot;//
+
+
+
+There&#39;s a pause on the other end of the line. &quot;Are you asking &#39;how do we fix it for the people of the United States of America&#39; or &#39;how do we fix it for my son&#39;?&quot;
+
+&quot;...what are you doing?&quot; she asks. 
+
+
+
+She swears. &quot;I fricking knew it. It seemed too convenient that you grew a moral spine all of a sudden. It&#39;s ok if millions die for an entire decade, but let&#39;s act now to save one person.&quot;
+
+&quot;Jo,&quot; you plead.</tw-passagedata><tw-passagedata pid="67" name="Decision" tags="" position="825,2200" size="100,100">You probably have 60 seconds left before they discover an intruder in the system.
+
+What do you do?
+
+[[Finish uploading the dataset]]
+[[</tw-passagedata><tw-passagedata pid="68" name="Finish uploading the dataset" tags="" position="800,2350" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="69" name="Untitled Passage 1" tags="" position="275,2050" size="100,100">
+Something catches your eye by the doorway. It&#39;s a photograph of Jo, you, and the other members of the research team grinning and holding an award. It&#39;s too blurry to read the engraving from the photo, but you still remember what the plaque says: for &quot;Most Socially Impactful Use of Artificial Intelligence&quot;.
+
+Your ears grow hot looking at the award, willing it to crumble to pieces in the photograph. You think back to the newspaper headlines.
+It was socially impactful, all right. Just not in the way they all had intended.
+A shadow passes over Jo&#39;s face as she comes to stand beside you, but she says nothing. Then she asks a question that you don&#39;t know the answer to.</tw-passagedata><tw-passagedata pid="70" name="What next?" tags="" position="1075,1850" size="100,100">&quot;Plug in the hard drive.&quot;
+
+You glance at the compact hard drive sitting on the desk next to you. It looks like something you might use to back up family photos. 
+
+&quot;Basically there are different causes for why an AI behaves in a discriminatory way. $algoname, just like any other AI, is really only good at one thing: recognizing patterns in data. Right now it&#39;s only trained on data from the past century of police //arrests//. Take a look at this.&quot;
+
+&quot;Look at the .txt file in there.&quot; You click She tosses you a tiny folded-up piece of paper. It&#39;s full of graphs and red ink. 
+
+&quot;What&#39;s this?&quot; you ask. 
+
+&quot;A bit of investigative journalism that could get me killed. There&#39;s a reason they don&#39;t let the programmers sift through the dataset. The gaps are so obvious it&#39;s laughable. There are 5x more false arrests of Black city residents than any other race. And arrests by D.C. police are most often made on the basis of $algovar. Probability of arrest has no correlation with probability that you will be a future criminal.&quot;
+
+An inkling of understanding dawns on you.
+
+&quot;It&#39;s the laziest possible training strategy...&quot; you murmur. &quot;And it&#39;s ruining people&#39;s lives.&quot;
+
+&quot;Well, only the ones who look like us. It serves everyone at the top just fine. &quot;
+
+[[&quot;How do we fix it?&quot;]]</tw-passagedata><tw-passagedata pid="71" name="Untitled Passage" tags="" position="625,2075" size="100,100">There&#39;s no joy in her eyes, only resolve, as she nods.
+
+&quot;Meet me at the lab tonight. You&#39;ll have to break the passcode yourself though; I&#39;m not risking writing it down.&quot;
+
+You carefully affix the bug to the whiteboard and restore the room&#39;s wireless signal. 
+
+&quot;Thank you Professor,&quot; you say. You swiftly knock the photo off its frame on the wall into the trash can and leave the office in silence.
+
+[[Next-&gt;2 Days Before]]</tw-passagedata><tw-passagedata pid="72" name="Untitled Passage 2" tags="" position="375,2275" size="100,100">A wave of desperation hits you, and you blurt out everything.
+
+&quot;Joanna, they took my kid.&quot;
+
+Her eyebrows draw together, but she says nothing. 
+
+&quot;He hasn&#39;t even finished high school! How could $algoname know anything? Did I raise a future criminal?&quot;
+
+She&#39;s still silent.
+
+&quot;You&#39;re the only one who understands how to fix it. Why it keeps calling the wrong people criminals.&quot;
+
+Joanna finally speaks. &quot;Correction: I&#39;m the only one who had the courage to care. So tell me: why do you care now?&quot;
+
+She narrows her eyes in suspicion. </tw-passagedata><tw-passagedata pid="73" name="&quot;It was just me.&quot;" tags="" position="975,2325" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="74" name="&quot;There was someone else...&quot;" tags="" position="1150,2300" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+
+<tw-storydata name="Vamp Draft" startnode="1" creator="Twine" creator-version="2.3.9" ifid="6D6410AB-B271-4633-A780-6115A8BA23E5" zoom="1" format="SugarCube" format-version="2.31.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Rude Awakening" tags="Main-Vamp-Story" position="2,300" size="100,100">&lt;&lt;cacheaudio &quot;calltoadventure&quot; &quot;music/calltoadventure.mp3&quot;&gt;&gt;
+
+From the depths of your mind you hear NA&#39;KIA, YOUR BEST FRIEND. 
+&quot;Hey Astrid, I know you sleep like the dead, but...&quot;
+&quot;Astrid?&quot;
+...
+&quot;ASTRID!&quot;
+
+[[...]]</tw-passagedata><tw-passagedata pid="2" name="Where are you?" tags="Main-Vamp-Story" position="131,302" size="100,100">...
+[[open your eyes]]
+[[keep...sleeping?]]</tw-passagedata><tw-passagedata pid="3" name="open your eyes" tags="" position="273,392" size="100,100">&lt;&lt;audio calltoadventure loop play&gt;&gt;
+
+NA&#39;KIA: Oh, thank god. 
+You: ...
+NA&#39;KIA: Dude what THE HELL. I thought you WERE DEAD.
+
+[[uh...surprise?]]
+[[what do you mean?]]</tw-passagedata><tw-passagedata pid="4" name="keep...sleeping?" tags="" position="284,194" size="100,100">You wake up in the hospital. What?
+
+[[stare at the ceiling in confusion]]
+[[do that TV/Movie thing and rip your IVs out]]</tw-passagedata><tw-passagedata pid="5" name="surprise!" tags="" position="458,527" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="6" name="what do you mean?" tags="" position="461,383" size="100,100">NA’KIA: I couldn’t...I couldn’t find a pulse dude. You weren’t responding AT ALL to any noise, your skin felt unnaturally cold, and….and to be honest you were in rough shape last night dude. It’s kinda why I came in to check on you. 
+
+[[Ask about last night]]</tw-passagedata><tw-passagedata pid="7" name="stare at the ceiling in confusion" tags="" position="441,199" size="100,100">There’s a crack in it. Is this the university hospital? Did all the new funding go to football again or something?
+
+Football...why does that...remind you of something.
+
+[[Attempt to follow the train of thought]]
+[[Look around the rest of the room]]</tw-passagedata><tw-passagedata pid="8" name="do that TV/Movie thing and rip your IVs out" tags="" position="320,28" size="100,100">You don’t have any IVs in your arms. Sorry drama queen. 
+[[stare at the ceiling in confusion]] 
+[[get out of bed]]</tw-passagedata><tw-passagedata pid="9" name="..." tags="" position="0,442" size="100,100">[[Where are you?]] </tw-passagedata><tw-passagedata pid="10" name="get out of bed" tags="" position="467,28" size="100,100">You stand, stretching luxuriously. Strips of sunlight are streaming through the blinds from your window across the room. Looks like it must be pretty nice outside.
+
+[[Make your bed]]
+[[Get dressed]]
+[[Look at your desk]]</tw-passagedata><tw-passagedata pid="11" name="uh...surprise?" tags="" position="277,541" size="100,100">You left out a half-hearted boo and she doesn’t laugh, but her eyes crinkle a bit at the corners. She’s letting you off easy.
+
+NA’KIA: Uh huh. I know the party last night was something else, but I still wanted to give you the chance to join me on my usual morning, now early afternoon hike today. Feel like joining the land of the living?
+
+[[sure]]
+[[I&#39;ll pass]]</tw-passagedata><tw-passagedata pid="12" name="sure" tags="" position="202,691" size="100,100">NA’KIA: Really?? I mean, uh, yes, great! I already made some breakfast in the kitchen that I was gonna leave for ya, but it’s calling your name now I guess!
+
+I’ll go grab my phone and refill my water bottle. See ya in a bit.
+
+*NA’KIA leaves the room*
+
+[[get out of bed]] </tw-passagedata><tw-passagedata pid="13" name="I&#39;ll pass" tags="" position="352,691" size="100,100">NA’KIA looks disappointed, but doesn’t press the matter. 
+
+NA’KIA: Oh, okay man. Well, rest up then. 
+
+She pats your hand as she stands up to leave.
+
+NA’KIA: Woah dude, you’re pretty cold. Might wanna pull those blankets a bit tighter!
+
+*NA’KIA leaves the room*
+
+</tw-passagedata><tw-passagedata pid="14" name="Make your bed" tags="" position="643,14" size="100,100">I bet your mom would be proud--good kid. 
+
+[[Get dressed]] 
+[[Look at your desk]] </tw-passagedata><tw-passagedata pid="15" name="Get dressed" tags="" position="645,267" size="100,100">Thinking about typical fall weather, you go to put on a hoodie, some thicker socks maybe, but when you step in front of your dresser, that sunlight peeking through feels warm. Really warm. 
+
+You think about how climate change is a thing and elect instead for a light, short-sleeved t-shirt, but decide to keep the long pants and thick socks. 
+
+[[Breakfast time!]]
+[[Look at your desk]] </tw-passagedata><tw-passagedata pid="16" name="Look at your desk" tags="" position="645,138" size="100,100">There’s your journal, your laptop, and some miscellaneous school-work. Behind everything is a mini cork-board where you see the flyer for that party you and Na’kia went to last night.
+
+Why is that kind of fuzzy? You don’t drink much and certainly have never drank enough to black-out (you feel relatively fine right now too). What happened last night?
+
+[[Breakfast time!]] </tw-passagedata><tw-passagedata pid="17" name="Breakfast time!" tags="" position="794,258" size="100,100">You exit the room and scarf down some food. It’s tasty as always--Na’kia is a great cook--but...you still feel hungry afterward as if you didn’t eat at all. 
+
+[[Time to hike!]]</tw-passagedata><tw-passagedata pid="18" name="Time to hike!" tags="" position="924,263" size="100,100">You see Na’kia waving you down from the end of the driveway.
+
+NA’KIA: C’mon! I was checking to see if that one package came in, but nothing yet so I’m ready to go.
+
+It’s become a tad overcast now, but when you step outside, the clouds move and the sun shines bright. 
+
+You take a step off the porch into the light and--
+
+[[Oh no.]]</tw-passagedata><tw-passagedata pid="19" name="Oh no." tags="" position="1051,263" size="100,100">You’re unbearably warm. Uncomfortably hot. You..
+
+You might be on fire. Is that the smell of smoke entering your nose? 
+
+[[Faint]]</tw-passagedata><tw-passagedata pid="20" name="Faint" tags="" position="1182,264" size="100,100">You return to consciousness on the couch. There are welts on your arm, but as you look at them, they begin to fade away and your skin is clear and shines like enamel. 
+
+You look up. Unsurprisingly, Na’Kia looks back, eyes on your arm too before rising to meet your gaze. 
+
+NA’KIA: Well. Not to go all Twilight on ya, but I think I know what you are.
+
+[[END SCENE (for now)]]</tw-passagedata><tw-passagedata pid="21" name="END SCENE (for now)" tags="" position="1351,45" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="22" name="Ask about last night" tags="" position="599,386" size="100,100">She looks uncomfortable.
+
+NA’KIA: Well…since you asked. I didn’t want to go mom-mode and lecture you right away (*I was planning on that during the hike*) but I couldn’t find you for half the night dude. Which uh, pretty not cool when we went together. 
+
+She pauses.
+
+[[And?]]
+[[Wait silently.]]</tw-passagedata><tw-passagedata pid="23" name="And?" tags="" position="728,391" size="100,100">NA’KIA: And then when I did find you...you seemed on-edge and like maybe you were high on something? 
+
+NA&#39;KIA: I-I&#39;d rather not talk about this right now actually. I&#39;m gonna head out for a hike, okay? There&#39;s some breakfast in the kitchen. 
+
+*She stands to leave*
+
+[[Drop it]]
+[[Press the matter]]</tw-passagedata><tw-passagedata pid="24" name="Wait silently." tags="" position="727,515" size="100,100">NA’KIA: And then when I did find you...you seemed on-edge and like maybe you were high on something? 
+
+NA&#39;KIA: I-I&#39;d rather not talk about this right now actually. I&#39;m gonna head out for a hike, okay? There&#39;s some breakfast in the kitchen. 
+
+*She stands to leave*
+
+[[Drop it]]
+[[Press the matter]]</tw-passagedata><tw-passagedata pid="25" name="Drop it" tags="" position="854,389" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="26" name="Press the matter" tags="" position="967,520" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="27" name="Attempt to follow the train of thought" tags="" position="819,2" size="100,100">Oh, that guy that kept trying to talk to you last night. Right. You think he might’ve been a football player. He kept saying something about the new stadium, anyway. 
+
+For some reason, the side of your neck throbs at the thought of him. 
+
+[[get out of the hospital bed]]</tw-passagedata><tw-passagedata pid="28" name="Look around the rest of the room" tags="" position="820,126" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="29" name="get out of the hospital bed" tags="" position="955,10" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+
